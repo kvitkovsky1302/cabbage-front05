@@ -1,28 +1,15 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useState, useEffect } from 'react';
-// import { useMediaQuery } from 'react-responsive';
+import { useState } from 'react';
 
 import Modal from '../Modal/Modal';
 import ModalUniversal from '../ModalUniversal/ModalUniversal';
-
+import defaultAvatar from './user.png';
 import authSelectors from '../../redux/auth/auth-selectors';
 import styles from '../Header/Header.module.css';
 import authOperations from '../../redux/auth/auth-operations';
 
 export default function UserMenu() {
   const [showModal, setShowModal] = useState(false);
-
-  // useEffect(() => {
-  //   document.body.style.overflow = isModalOpen ? 'hidden' : 'auto';
-  // }, [isModalOpen]);
-
-  // const desctopOrLaptopSize = useMediaQuery({
-  //   query: '(min-width: 768px)',
-  // });
-
-  // const mobile = useMediaQuery({
-  //   query: '(max-width: 767px)',
-  // });
 
   const toggleModal = () => {
     setShowModal(!showModal);
@@ -32,24 +19,29 @@ export default function UserMenu() {
 
   const dispatch = useDispatch();
 
-  // const userEmail = useSelector(state => state.auth.user.email);
-  // const userName = userEmail ? nameFromEmail(userEmail) : 'User Name';
-
   const name = useSelector(authSelectors.getUsername);
+  const avatar = useSelector(authSelectors.getUserAvatar);
 
   return (
     <>
-      <button type="button" className={styles.user}>
-        U
-      </button>
-      <button type="button" className={styles.userName}>
-        {name}
-      </button>
-      <button
-        type="button"
-        onClick={(handleLogout, toggleModal)}
-        className={styles.logout}
-      >
+      <div className={styles.user}>
+        <img
+          src={avatar ? avatar : defaultAvatar}
+          alt="user avatar"
+          className={styles.userAvatar}
+        />
+      </div>
+      <div className={styles.userName}>{name} </div>
+      <button type="button" className={styles.logout} onClick={toggleModal}>
+        {showModal && (
+          <Modal
+            onClose={toggleModal}
+            toggleEnterActiveBtn={handleLogout}
+            toggleRegisterActiveBtn={toggleModal}
+          >
+            <ModalUniversal children={'Вы действительно хотите выйти?'} />
+          </Modal>
+        )}
         <svg
           width="16"
           height="16"
@@ -76,84 +68,20 @@ export default function UserMenu() {
       </button>
       <button
         type="button"
-        onClick={(handleLogout, toggleModal)}
+        onClick={toggleModal}
         className={styles.tabletLogout}
       >
+        {showModal && (
+          <Modal
+            onClose={toggleModal}
+            toggleEnterActiveBtn={handleLogout}
+            toggleRegisterActiveBtn={toggleModal}
+          >
+            <ModalUniversal children={'Вы действительно хотите выйти?'} />
+          </Modal>
+        )}
         Выйти
       </button>
-
-      {showModal && (
-        <Modal onClose={toggleModal}>
-          <ModalUniversal
-            children={'Вы действительно хотите выйти?'}
-            onClose={toggleModal}
-          />
-        </Modal>
-      )}
     </>
   );
 }
-
-// import { useState, useEffect } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { useMediaQuery } from 'react-responsive';
-
-// import s from './HeaderHome.module.scss';
-// import Icons from '../../Icons';
-// import LogoutBtn from '../LogoutBtn';
-// import Modal from '../Modal';
-// import ModalBody from '../ModalBody';
-// import { nameFromEmail } from '../../utils/nameFromEmail';
-
-// export default function HeaderHome() {
-//   const [isModalOpen, setIsModalOpen] = useState(false);
-//   const togleModal = () => setIsModalOpen(state => !state);
-
-//   //const dispatch = useDispatch();
-//   const userEmail = useSelector(state => state.auth.user.email);
-//   const userName = userEmail ? nameFromEmail(userEmail) : 'User Name';
-//   //OK console.log('email=', userEmail, ', name=', userName);
-
-//   useEffect(() => {
-//     document.body.style.overflow = isModalOpen ? 'hidden' : 'auto';
-//   }, [isModalOpen]);
-
-//   const desctopOrLaptopSize = useMediaQuery({
-//     query: '(min-width: 768px)',
-//   });
-
-//   const mobile = useMediaQuery({
-//     query: '(max-width: 767px)',
-//   });
-
-//   return (
-//     <div className={s.header}>
-//       <Icons name="logo" className={s.header__logo} />
-
-//       <div className={s.login__container}>
-//         <div className={s.header__logout}>
-//           <Icons name="U" width="8 " height="14" />
-//         </div>
-//         {mobile && (
-//           <LogoutBtn onClick={togleModal}>
-//             <Icons name="logout-1" width="16" height="16" />
-//           </LogoutBtn>
-//         )}
-//         {desctopOrLaptopSize && (
-//           <div className={s.header__user}>
-//             <span className={s.logout__user_name}>{userName}</span>
-//             <LogoutBtn onClick={togleModal}>Выйти</LogoutBtn>
-//           </div>
-//         )}
-//       </div>
-
-//       {isModalOpen && (
-//         <Modal onClose={togleModal}>
-//           <ModalBody onClose={togleModal}>
-//             Вы действительно хотите выйти?
-//           </ModalBody>
-//         </Modal>
-//       )}
-//     </div>
-//   );
-// }

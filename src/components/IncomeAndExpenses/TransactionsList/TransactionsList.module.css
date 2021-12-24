@@ -1,0 +1,114 @@
+@media screen and (min-width: 768px) {
+  .tableDeskWrapper {
+    margin: 0;
+  }
+
+  .table {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.04em;
+  }
+
+  .tableHead {
+    width: 100%;
+  }
+
+  .tableHeadTr {
+    background: #f5f6fb;
+    border-radius: 20px 20px 0 0;
+    height: 40px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: #000;
+    padding-right: 84px;
+    padding-left: 20px;
+  }
+
+  .tableTransThDate {
+    padding-left: 21px;
+    width: 146px;
+    display: flex;
+  }
+  .tableTransThProduct {
+    display: flex;
+    width: 209px;
+  }
+
+  .tableTransThCategory {
+    width: 119px;
+  }
+
+  .tableTransThCost {
+    width: 169px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .tableTr {
+    width: 100%;
+    height: 43px;
+    border-bottom: 2px solid #f5f6fb;
+    display: inline-table;
+    color: #52555f;
+  }
+
+  .tableBody {
+    height: 346px;
+    border-collapse: collapse;
+    width: 100%;
+    border: 2px solid #f5f6fb;
+    overflow-y: scroll;
+  }
+
+  .tableBody::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 2px;
+    background: #f5f6fb;
+  }
+
+  .tableBody::-webkit-scrollbar-thumb {
+    background-color: #fc842d;
+    border-radius: 2px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .tableDeskWrapper {
+    margin-right: 30px;
+  }
+  .table {
+    width: 760px;
+  }
+
+  .tableHeadTr {
+    padding-right: 136px;
+    /* padding-right: 136px; */
+  }
+
+  .tableTransThDate {
+    width: 150px;
+  }
+
+  .tableTransThProduct {
+    width: 225px;
+  }
+
+  .tableTransThCategory {
+    width: 150px;
+  }
+  .tableTransThCost {
+    width: 146px;
+  }
+}
+
+.loading {
+  height: 100%;
+}

@@ -1,0 +1,109 @@
+.logo {
+  margin-left: 19px;
+  margin-top: 12px;
+}
+
+.headerContainer {
+  display: flex;
+  width: 320px;
+  height: 56px;
+}
+
+.logout {
+  width: 12px;
+  height: 16px;
+  margin-top: 20px;
+  margin-right: 19px;
+  margin-left: auto;
+  background: none;
+  padding: 0;
+  justify-content: center;
+  border: none;
+}
+.user {
+  width: 32px;
+  margin-top: 12px;
+  height: 32px;
+  background: #f5f6fa;
+  border-radius: 50%;
+  text-align: center;
+  margin-left: 129px;
+  border: none;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+}
+.userName {
+  display: none;
+}
+.tabletLogout {
+  display: none;
+}
+@media (min-width: 768px) {
+  .headerContainer {
+    width: 768px;
+  }
+
+  .logo {
+    margin-left: 26px;
+  }
+  .userName {
+    display: inline-block;
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .user {
+    margin-left: auto;
+  }
+  .logout {
+    display: none;
+  }
+  .tabletLogout {
+    display: block;
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-right: 20px;
+  }
+
+  .tabletLogout::before {
+    width: 36px;
+    transform: rotate(90deg);
+
+    content: '';
+    display: inline-block;
+    border: 1px solid #e0e5eb;
+  }
+}
+
+@media (min-width: 1280px) {
+  .headerContainer {
+    width: 1280px;
+  }
+
+  .logo {
+    margin-top: 13px;
+  }
+  .user {
+    margin-left: 908px;
+  }
+  .tabletLogout {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}

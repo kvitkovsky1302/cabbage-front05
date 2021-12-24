@@ -1,0 +1,77 @@
+.reports {
+  width: 320px;
+  margin-top: 30px;
+  margin-left: -20px;
+  background-color: white;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link:first-child {
+  margin-right: 13px;
+}
+
+.navigationWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.svg {
+  width: 10px;
+  height: 18px;
+}
+
+.data {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: center;
+  width: 96px;
+  height: 20px;
+}
+
+.dataWrapper {
+  padding: 2px 13px 0;
+}
+
+.button {
+  border: none;
+  outline: none;
+  background-color: #fff;
+  padding: 0;
+
+  transition: all 250ms ease-in-out;
+}
+
+.button:hover,
+.button:focus {
+  transform: scale(1.15);
+}
+
+@media screen and (min-width: 768px) {
+  .reports {
+    width: 666px;
+    margin-left: 0;
+    border-radius: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1279px) {
+  .reports {
+    width: 1060px;
+    margin-left: -196px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .reports {
+    width: 1060px;
+  }
+}

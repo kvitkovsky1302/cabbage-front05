@@ -1,0 +1,133 @@
+/* ---------------------------mobile -------------------------*/
+.auth {
+  position: absolute;
+  right: 110px;
+  top: 197px;
+
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 100ch;
+  /* height: 625px; */
+  margin: auto;
+  margin-top: 48px;
+  padding: 42px 17px 42px;
+
+  border-radius: 30px;
+  box-shadow: 5px 10px 20px rgba(170, 178, 197, 0.4);
+}
+
+.textGoogle {
+  margin: auto;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.textAuth {
+  /* margin-bottom: 24px; */
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  width: 242px;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+
+  margin-bottom: 10px;
+  color: #52555f;
+}
+
+.text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.04em;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  color: #000000;
+}
+
+.ErrorMessage {
+  margin-top: 0;
+  padding: 0;
+  color: #eb5757;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+}
+
+.input {
+  font-family: Roboto;
+  margin-bottom: 4px;
+  /* margin-bottom: 30px; */
+  width: 253px;
+  height: 32px;
+  background: #f5f6fb;
+  color: #a6abb9;
+  border-radius: 30px;
+  padding: 17px 20px;
+  border: 0;
+}
+
+.btnRegister {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+.linkElement {
+  justify-content: center;
+  margin-top: 15px;
+}
+.link {
+  font-weight: 400;
+  font-size: 10px;
+  height: 24px;
+  letter-spacing: 0.04em;
+
+  padding-top: 10px;
+}
+/* ----------------------------------------tablet ---------------------------------*/
+
+@media screen and (min-width: 768px) {
+  .auth {
+    position: absolute;
+    right: 166px;
+    top: 241px;
+
+    margin-top: 0;
+    width: 436px;
+    height: 700px;
+    /* height: 685px; */
+    padding: 50px 85px 50px;
+  }
+
+  .textAuth {
+    width: 265px;
+    height: 28px;
+    font-size: 12px;
+    line-height: 1.7;
+    letter-spacing: 0.04em;
+  }
+
+  .text {
+    font-size: 12px;
+    line-height: 1.16;
+  }
+
+  .input {
+    width: 265px;
+    height: 32px;
+  }
+}
+
+/* ----------------------------------------desktop ---------------------------------*/
+
+@media screen and (min-width: 1280px) {
+  .auth {
+    position: absolute;
+    right: 110px;
+    top: 117px;
+  }
+}

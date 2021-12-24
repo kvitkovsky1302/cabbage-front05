@@ -1,0 +1,144 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 16px;
+  padding-right: 11px;
+  padding-top: 20px;
+  position: relative;
+}
+
+.charts {
+  /* background-color: #071f41; */
+}
+
+.item {
+  margin-right: 10px;
+  margin-bottom: 40px;
+}
+
+.price {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: #52555f;
+
+  margin-bottom: 5px;
+}
+
+.category {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: #52555f;
+
+  margin-top: 5px;
+}
+
+.button {
+  border: none;
+  outline: none;
+  background-color: #fff;
+  padding: 0;
+  width: 85px;
+  height: 122px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  transition: all 250ms ease-in-out;
+}
+
+.button:hover,
+.button:focus {
+  transform: scale(1.05);
+}
+
+.activeButton {
+  border: none;
+  outline: none;
+  background-color: #fff;
+  padding: 0;
+}
+
+.svg {
+  width: 56px;
+  height: 56px;
+  fill: #071f41;
+}
+
+.activeSvg {
+  fill: hsl(23, 100%, 56%);
+  transition: fill 250ms ease-in-out;
+}
+
+.activeSvg rect {
+  fill: #ffdac0;
+}
+
+@media screen and (max-width: 767px) {
+  .line1 {
+    width: 265px;
+    height: 1px;
+    background-color: #e0e5eb;
+
+    position: absolute;
+    top: 147px;
+    right: 30px;
+  }
+
+  .line2 {
+    width: 265px;
+    height: 1px;
+    background-color: #e0e5eb;
+
+    position: absolute;
+    top: 309px;
+    right: 30px;
+  }
+
+  .line3 {
+    width: 265px;
+    height: 1px;
+    background-color: #e0e5eb;
+
+    position: absolute;
+    top: 471px;
+    right: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .item {
+    margin-right: 15px;
+  }
+
+  .list {
+    margin-right: -15px;
+    padding-right: 27px;
+    padding-left: 27px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .item {
+    margin-right: 15px;
+  }
+
+  .list {
+    margin-right: -15px;
+    padding-right: 228px;
+    padding-left: 228px;
+  }
+}

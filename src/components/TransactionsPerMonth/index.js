@@ -1,1 +1,1 @@
-export { default } from './transactionsPerMonth';
+export { default } from './TransactionsPerMonth';

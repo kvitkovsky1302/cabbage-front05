@@ -4,7 +4,6 @@ import { alert, defaultModules } from '@pnotify/core';
 import '@pnotify/core/dist/PNotify.css';
 import * as PNotifyMobile from '@pnotify/mobile';
 import '@pnotify/mobile/dist/PNotifyMobile.css';
-import { balanceServices } from '../../services';
 
 axios.defaults.baseURL = 'https://second-serv.herokuapp.com/api';
 
@@ -45,14 +44,10 @@ const logIn = createAsyncThunk('auth/login', async credentials => {
 
 const logOut = createAsyncThunk('auth/logout', async () => {
   try {
-    await axios.post('auth/user/signout');
+    await axios.post('auth/users/signout');
     token.unset();
   } catch (error) {
     console.log(error);
-    defaultModules.set(PNotifyMobile, {});
-    alert({
-      text: `Не удалось выйти из учетной записи`,
-    });
   }
 });
 

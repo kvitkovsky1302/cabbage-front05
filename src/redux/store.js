@@ -15,7 +15,6 @@ import logger from 'redux-logger';
 import authSliceReducer from './auth/auth-slice';
 import { transactionsReducer } from './transaction';
 import chosenMonthReduser from './chosenMonth/chosenMonth-reduser';
-import { briefReducer } from './brief';
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -37,7 +36,6 @@ export const store = configureStore({
     auth: persistReducer(authPersistConfig, authSliceReducer),
     transactions: transactionsReducer,
     desiredMonth: chosenMonthReduser,
-    brief: briefReducer,
   },
   middleware,
   devtools: process.env.NODE_ENV !== 'development',

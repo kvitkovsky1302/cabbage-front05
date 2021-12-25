@@ -5,7 +5,6 @@ import { toast } from 'react-toastify';
 import s from './Tabs.module.css';
 import TransactionForm from '../TransactionForm';
 import TransactionsList from '../TransactionsList/TransactionsList';
-import Brief from '../../Brief';
 import Button from '../Button';
 // import { balanceOperations } from '../../../redux/balance';
 import authOperations from '../../../redux/auth/auth-operations';
@@ -14,7 +13,6 @@ import {
   transactionsOperations,
   transactionsSelectors,
 } from '../../../redux/transaction';
-import { briefOperations, briefSelectors } from '../../../redux/brief';
 import axios from 'axios';
 
 const optionsExpense = [
@@ -92,11 +90,9 @@ export default function Tabs() {
     console.log('data', data);
     if (income) {
       dispatch(transactionsOperations.addIncome(data, onSuccess));
-      dispatch(briefOperations.getIncomeByMonth(selectedDate));
-    }
+     }
     if (expense) {
       dispatch(transactionsOperations.addExpense(data, onSuccess));
-      dispatch(briefOperations.getExpenseByMonth(selectedDate));
     }
   };
 

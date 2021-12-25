@@ -45,14 +45,10 @@ const logIn = createAsyncThunk('auth/login', async credentials => {
 
 const logOut = createAsyncThunk('auth/logout', async () => {
   try {
-    await axios.post('auth/user/signout');
+    await axios.post('auth/users/signout');
     token.unset();
   } catch (error) {
     console.log(error);
-    defaultModules.set(PNotifyMobile, {});
-    alert({
-      text: `Не удалось выйти из учетной записи`,
-    });
   }
 });
 

@@ -83,7 +83,9 @@ export default function Income() {
             </li>
           ))}
       </ul>
-      <Charts descriptionList={descriptionList} />
+      {descriptionList.length > 0 && (
+        <Charts descriptionList={descriptionList} />
+      )}
     </>
   );
 }

@@ -8,10 +8,6 @@
   position: relative;
 }
 
-.charts {
-  /* background-color: #071f41; */
-}
-
 .item {
   margin-right: 10px;
   margin-bottom: 40px;
@@ -131,7 +127,7 @@
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .item {
     margin-right: 15px;
   }

@@ -15,6 +15,7 @@ import TransactionView from './pages/Transactions/TransactionView';
 import authSelectors from './redux/auth/auth-selectors';
 import './App.css';
 import styles from './components/Header/Header.module.css';
+import backgroundStyles from './backgroundStyles.module.css';
 
 //Auth
 const Login = lazy(() => import('./pages/Auth/Login/Login'));
@@ -34,48 +35,50 @@ function App() {
         <AppBar></AppBar>
         {isLoggedIn ? <UserMenu /> : null}
       </header>
-      <Container>
-        <Suspense fallback={<div>Downloading...</div>}>
-          <Routes>
-            <Route
-              path={paths.register}
-              element={
-                //  <PublicRoute restricted redirectTo={paths.login}>
-                <PublicRoute restricted>
-                  <Registration />
-                </PublicRoute>
-              }
-            />
-            <Route
-              path={paths.login}
-              element={
-                //  <PublicRoute restricted redirectTo={paths.home}>
-                <PublicRoute restricted>
-                  <Login />
-                </PublicRoute>
-              }
-            />
+      <div className={backgroundStyles.backgroundWrapper}>
+        <Container>
+          <Suspense fallback={<div>Downloading...</div>}>
+            <Routes>
+              <Route
+                path={paths.register}
+                element={
+                  //  <PublicRoute restricted redirectTo={paths.login}>
+                  <PublicRoute restricted>
+                    <Registration />
+                  </PublicRoute>
+                }
+              />
+              <Route
+                path={paths.login}
+                element={
+                  //  <PublicRoute restricted redirectTo={paths.home}>
+                  <PublicRoute restricted>
+                    <Login />
+                  </PublicRoute>
+                }
+              />
 
-            <Route
-              path={paths.transactions}
-              element={
-                <PrivateRoute>
-                  <TransactionView />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              end
-              path={paths.reports}
-              element={
-                <PrivateRoute>
-                  <Reports />
-                </PrivateRoute>
-              }
-            />
-          </Routes>
-        </Suspense>
-      </Container>
+              <Route
+                path={paths.transactions}
+                element={
+                  <PrivateRoute>
+                    <TransactionView />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                end
+                path={paths.reports}
+                element={
+                  <PrivateRoute>
+                    <Reports />
+                  </PrivateRoute>
+                }
+              />
+            </Routes>
+          </Suspense>
+        </Container>
+      </div>
     </>
   );
 

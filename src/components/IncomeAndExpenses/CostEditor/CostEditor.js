@@ -1,4 +1,4 @@
-import { ReactComponent as Calculator } from '../../../img/reportsCategories/calculator.svg';
+import { ReactComponent as Calculator } from '../../../images/reportsCategories/calculator.svg';
 import s from './CostEditor.module.css';
 
 export default function CostEditor({ cost, onChange }) {

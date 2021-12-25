@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import moment from 'moment';
-import { ReactComponent as Left } from '../../img/reportsCategories/left-arrow.svg';
-import { ReactComponent as Right } from '../../img/reportsCategories/right-arrow.svg';
+import { ReactComponent as Left } from '../../images/reportsCategories/left-arrow.svg';
+import { ReactComponent as Right } from '../../images/reportsCategories/right-arrow.svg';
 import {
   incrementMonth,
   decrementMonth,

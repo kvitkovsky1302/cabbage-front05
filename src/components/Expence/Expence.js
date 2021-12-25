@@ -1,22 +1,23 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { ReactComponent as Transport } from '../../img/reportsCategories/transport.svg';
-import { ReactComponent as Products } from '../../img/reportsCategories/products.svg';
-import { ReactComponent as Health } from '../../img/reportsCategories/health.svg';
-import { ReactComponent as Alcohol } from '../../img/reportsCategories/alcohol.svg';
-import { ReactComponent as Entertainment } from '../../img/reportsCategories/entertainment.svg';
-import { ReactComponent as Housing } from '../../img/reportsCategories/housing.svg';
-import { ReactComponent as Technics } from '../../img/reportsCategories/technics.svg';
-import { ReactComponent as Communal } from '../../img/reportsCategories/communal.svg';
-import { ReactComponent as Sport } from '../../img/reportsCategories/sport.svg';
-import { ReactComponent as Education } from '../../img/reportsCategories/education.svg';
-import { ReactComponent as Other } from '../../img/reportsCategories/other.svg';
+import { ReactComponent as Transport } from '../../images/reportsCategories/transport.svg';
+import { ReactComponent as Products } from '../../images/reportsCategories/products.svg';
+import { ReactComponent as Health } from '../../images/reportsCategories/health.svg';
+import { ReactComponent as Alcohol } from '../../images/reportsCategories/alcohol.svg';
+import { ReactComponent as Entertainment } from '../../images/reportsCategories/entertainment.svg';
+import { ReactComponent as Housing } from '../../images/reportsCategories/housing.svg';
+import { ReactComponent as Technics } from '../../images/reportsCategories/technics.svg';
+import { ReactComponent as Communal } from '../../images/reportsCategories/communal.svg';
+import { ReactComponent as Sport } from '../../images/reportsCategories/sport.svg';
+import { ReactComponent as Education } from '../../images/reportsCategories/education.svg';
+import { ReactComponent as Other } from '../../images/reportsCategories/other.svg';
 import Charts from '../Charts';
 import s from './Expence.module.css';
 
 export default function Expence() {
   const [activeValue, setActiveValue] = useState('');
   const [descriptionList, setDescriptionList] = useState([]);
+  // console.log(descriptionList);
 
   // Получаем данные расходов из редакса
   const expenceData = useSelector(
@@ -181,13 +182,13 @@ export default function Expence() {
             </li>
           ))}
         {/* Добавляет линии после 3, 6, 9 категорий в мобильной версии */}
-        {categoriesList.length > 3 && <div className={s.line1}></div>}
-        {categoriesList.length > 6 && <div className={s.line2}></div>}
-        {categoriesList.length > 9 && <div className={s.line3}></div>}
+        {categoriesList.length > 2 && <div className={s.line1}></div>}
+        {categoriesList.length > 5 && <div className={s.line2}></div>}
+        {categoriesList.length > 8 && <div className={s.line3}></div>}
       </ul>
-      <div className={s.charts}>
+      {descriptionList.length > 0 && (
         <Charts descriptionList={descriptionList} />
-      </div>
+      )}
     </>
   );
 }

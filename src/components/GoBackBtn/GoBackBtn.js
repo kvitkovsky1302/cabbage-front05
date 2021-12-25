@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import { paths } from '../../config';
-import { ReactComponent as GoBack } from '../../img/reportsCategories/goBack.svg';
+import { ReactComponent as GoBack } from '../../images/reportsCategories/goBack.svg';
 import s from './GoBackBtn.module.css';
 
 const GoBackBtn = () => {

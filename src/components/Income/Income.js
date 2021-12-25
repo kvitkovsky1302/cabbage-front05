@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { ReactComponent as Salary } from '../../img/reportsCategories/salary.svg';
-import { ReactComponent as AdditionalIncome } from '../../img/reportsCategories/additional-income.svg';
+import { ReactComponent as Salary } from '../../images/reportsCategories/salary.svg';
+import { ReactComponent as AdditionalIncome } from '../../images/reportsCategories/additional-income.svg';
 import Charts from '../Charts';
 import s from './Income.module.css';
 
@@ -83,7 +83,9 @@ export default function Income() {
             </li>
           ))}
       </ul>
-      <Charts descriptionList={descriptionList} />
+      {descriptionList.length > 0 && (
+        <Charts descriptionList={descriptionList} />
+      )}
     </>
   );
 }

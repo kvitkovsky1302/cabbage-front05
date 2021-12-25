@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { ReactComponent as DeleteButton } from '../../../img/reportsCategories/deleteBtn.svg';
+import { ReactComponent as DeleteButton } from '../../../images/reportsCategories/deleteBtn.svg';
 import Button from '../Button';
 
 import s from './Transaction.module.css';

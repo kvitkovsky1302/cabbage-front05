@@ -12,7 +12,7 @@ import {
   transactionsOperations,
   transactionsActions,
 } from '../../../redux/transaction';
-import { ReactComponent as Calendar } from '../../../img/reportsCategories/calendar.svg';
+import { ReactComponent as Calendar } from '../../../images/reportsCategories/calendar.svg';
 
 import s from './TransactionForm.module.css';
 

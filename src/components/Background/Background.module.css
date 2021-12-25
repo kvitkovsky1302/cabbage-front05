@@ -1,24 +1,24 @@
 /*-------------------------стили для приватных роутов ---------------------------*/
-.backgroundWrapper {
+.background {
   margin-left: auto;
   margin-right: auto;
-  background-image: url(./images/background/background-m.png);
+  background-image: url(../../images/background/background-m.png);
   background-size: 320px 342px;
   background-repeat: no-repeat;
   background-position: top center;
 }
 
 @media screen and (min-width: 768px) {
-  .backgroundWrapper {
-    background-image: url(./images/background/background-t.png);
+  .background {
+    background-image: url(../../images/background/background-t.png);
     background-size: 768px, 183px;
     background-position: top center;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .backgroundWrapper {
-    background-image: url(./images/background/background-d.png);
+  .background {
+    background-image: url(../../images/background/background-d.png);
     background-size: 1280px, 52px;
     background-position: top center;
   }

@@ -1,7 +1,6 @@
 import { Suspense, lazy } from 'react';
 import { useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
-
 import { paths } from './config';
 //components
 import Container from './components/Container';
@@ -11,11 +10,11 @@ import PrivateRoute from './components/Route/PrivateRoute';
 import PublicRoute from './components/Route/PublicRoute';
 //Transactions
 import TransactionView from './pages/Transactions/TransactionView';
-
+//Background
+import Background from './components/Background';
 import authSelectors from './redux/auth/auth-selectors';
 import './App.css';
 import styles from './components/Header/Header.module.css';
-import backgroundStyles from './backgroundStyles.module.css';
 
 //Auth
 const Login = lazy(() => import('./pages/Auth/Login/Login'));
@@ -35,7 +34,7 @@ function App() {
         <AppBar></AppBar>
         {isLoggedIn ? <UserMenu /> : null}
       </header>
-      <div className={backgroundStyles.backgroundWrapper}>
+      <Background>
         <Container>
           <Suspense fallback={<div>Downloading...</div>}>
             <Routes>
@@ -78,7 +77,7 @@ function App() {
             </Routes>
           </Suspense>
         </Container>
-      </div>
+      </Background>
     </>
   );
 

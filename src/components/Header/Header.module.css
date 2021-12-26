@@ -5,6 +5,7 @@
 
 .headerContainer {
   display: flex;
+  /* justify-content: center; */
   width: auto;
   height: 56px;
 }
@@ -98,6 +99,7 @@
 
 @media (min-width: 1280px) {
   .headerContainer {
+    margin-left: 65px;
     width: auto;
   }
 

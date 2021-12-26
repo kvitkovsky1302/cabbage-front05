@@ -25,11 +25,11 @@
 }
 
 /*-------------------------стили для публичных роутов ---------------------------*/
-/* .backgroundAuth {
+.backgroundAuth {
   max-width: 320px;
   margin-left: auto;
   margin-right: auto;
-  background-image: url(./images/background-m.png);
+  background-image: url(../../images/background/background-m.png);
   background-size: 84px, 86px, 320px;
   background-repeat: no-repeat;
   background-position: right -20px top 104px, left 6px bottom 6px, top 0 center;
@@ -38,9 +38,10 @@
 @media screen and (min-width: 768px) {
   .backgroundAuth {
     max-width: 768px;
-    background-image: url(./images/background-t.png);
+    background-image: url(../../images/background/background-t.png);
     background-size: 1200px, 768px, 183px;
-    background-position: top 20px left 10px, top 0 left 0, left 100px bottom 56px;
+    background-position: top 20px left 10px, top 0 left 0,
+      left 100px bottom 56px;
   }
 }
 
@@ -48,8 +49,9 @@
   .backgroundAuth {
     max-width: 1280px;
     min-height: 920px;
-    background-image: url(./images/background-d.png);
+    background-image: url(../../images/background/background-d.png);
     background-size: 1280px, 1280px, 183px;
-    background-position: top 20px left 10px, top 0 left 0, left 100px bottom 56px;
+    background-position: top 20px left 10px, top 0 left 0,
+      left 100px bottom 56px;
   }
-} */
+}

@@ -4,7 +4,7 @@ export default function Background({ children }) {
   return (
     <div className={s.background}>
       {children}
-      <div></div>
+      <div className={s.coles}></div>
     </div>
   );
 }

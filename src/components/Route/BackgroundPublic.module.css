@@ -1,0 +1,115 @@
+/*------------------------------------ mobile -----------------------------------*/
+.background {
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url(../../images/background/background-m.png);
+  background-size: 320px 342px;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+.coles {
+  padding-top: 330px;
+  background-repeat: no-repeat;
+  background-size: 1280px, 500px;
+  background-image: url(../../images/background/many\ coles.png);
+  background-position: top 30px left 10px, center;
+}
+.cole {
+  padding-top: 615px;
+  background-repeat: no-repeat;
+  background-size: 83px, 90px;
+  background-image: url(../../images/background/cole.png);
+  background-position: top 490px left 10px;
+}
+.logoHero {
+  position: absolute;
+  z-index: 3;
+  top: 100px;
+  left: 20px;
+  width: 180px;
+  height: 50px;
+}
+.hero__title {
+  position: absolute;
+  z-index: 3;
+  top: 160px;
+  left: 60px;
+  font-style: 700;
+  font-size: 13px;
+  line-height: 1.15;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #52555f;
+}
+/* ----------------------------------------tablet------------------------------ */
+@media screen and (min-width: 768px) {
+  .background {
+    max-width: 768px;
+    min-height: 658px;
+    background-image: url(../../images/background/background-t.png);
+    background-size: 768px, 183px;
+    background-position: top 20px left 10px, top 0 left 0,
+      left 100px bottom 56px;
+  }
+  .coles {
+    padding-top: 270px;
+    background-repeat: no-repeat;
+    background-size: 1280px, 500px;
+    background-image: url(../../images/background/many\ coles.png);
+    background-position: top 30px left 10px, center;
+  }
+  .cole {
+    padding-top: 270px;
+    background-repeat: no-repeat;
+    background-size: 183px, 142px;
+    background-image: url(../../images/background/double\ cole.png);
+    background-position: top 120px left 90px, center;
+  }
+  .logoHero {
+    left: 100px;
+    width: 310px;
+    height: 80px;
+  }
+  .hero__title {
+    top: 200px;
+    left: 200px;
+    font-size: 16px;
+    line-height: 1.18;
+    letter-spacing: 0.18em;
+  }
+}
+/* ----------------------------------------desktop------------------------------- */
+@media screen and (min-width: 1280px) {
+  .background {
+    max-width: 1280px;
+    min-height: 658px;
+    background-image: url(../../images/background/background-d.png);
+    background-size: 1280px, 183px;
+    background-position: top 20px left 10px, top 0 left 0,
+      left 100px bottom 56px;
+  }
+  .coles {
+    padding-top: 270px;
+    background-repeat: no-repeat;
+    background-size: 1280px, 232px;
+    background-image: url(../../images/background/many\ coles.png);
+    background-position: top 30px left 10px, center;
+  }
+  .cole {
+    padding-top: 270px;
+    background-repeat: no-repeat;
+    background-size: 183px, 142px;
+    background-image: url(../../images/background/double\ cole.png);
+    background-position: top 30px left 230px, center;
+  }
+  .logoHero {
+    top: 245px;
+    left: 170px;
+    width: 377px;
+    height: 120px;
+  }
+  .hero__title {
+    top: 365px;
+    left: 302px;
+  }
+}

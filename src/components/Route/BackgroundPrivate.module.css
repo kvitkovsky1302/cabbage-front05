@@ -32,9 +32,9 @@
     background-position: top center;
   }
   .coles {
-    padding-top: 900px;
+    padding-top: 280px;
     background-size: 1280px, 232px;
     background-image: url(../../images/background/many\ coles.png);
-    background-position: top center;
+    background-position: top 30px center;
   }
 }

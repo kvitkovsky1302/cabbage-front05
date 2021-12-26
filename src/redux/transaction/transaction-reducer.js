@@ -3,18 +3,6 @@ import { createReducer } from '@reduxjs/toolkit';
 import transactionsActions from './transaction-actions';
 import moment from 'moment';
 
-// const transactions = createReducer([], {
-//   [transactionsActions.fetchTransactionSuccess]: (_, { payload }) => payload,
-
-//   [transactionsActions.addTransactionSuccess]: (state, { payload }) => [
-//     ...state,
-//     payload,
-//   ],
-
-//   [transactionsActions.deleteTransactionSuccess]: (state, { payload }) =>
-//     state.filter(transaction => transaction.id !== payload),
-// });
-
 const transactions = createReducer(
   {},
   {
@@ -64,23 +52,9 @@ const isLoading = createReducer(false, {
 //   [transactionsActions.deleteTransactionRequest]: () => null,
 // });
 
-// const sixMonthsIncome = createReducer([], {
-//   [transactionsActions.getIncomeTotalSuccess]: (_, { payload }) =>
-//     payload.totalSum,
-// });
-
-// const sixMonthsExpense = createReducer([], {
-//   [transactionsActions.getExpenseTotalSuccess]: (_, { payload }) => {
-//     console.log('payloadex', payload);
-//     return payload.totalSum;
-//   },
-// });
-
 export default combineReducers({
   transactions,
   isLoading,
   totalBalance,
   selectedDate,
-  // sixMonthsIncome,
-  // sixMonthsExpense,
 });

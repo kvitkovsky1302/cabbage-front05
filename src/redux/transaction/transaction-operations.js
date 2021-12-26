@@ -119,45 +119,6 @@ const getIncomeByDate = date => async dispatch => {
   }
 };
 
-// const getExpenseByMonth = date => async dispatch => {
-//   console.log('date', date);
-//   dispatch(transactionsActions.getExpenseTotalRequest());
-//   const year = moment(Number(date)).format('YYYY');
-//   console.log('year', year);
-
-//   try {
-//     const { data } = await axios.get(`/expense?`, {
-//       params: {
-//         category: '',
-//         month: '',
-//         year,
-//       },
-//     });
-//     console.log('data', data);
-//     dispatch(transactionsActions.getExpenseTotalSuccess(data));
-//   } catch (error) {
-//     dispatch(transactionsActions.getExpenseTotalError(error.message));
-//   }
-// };
-
-// const getIncomeByMonth = date => async dispatch => {
-//   dispatch(transactionsActions.getIncomeTotalRequest());
-//   const month = moment(Number(date)).format('MM');
-
-//   try {
-//     const { data } = await axios.get(`/income?`, {
-//       params: {
-//         category: '',
-//         month,
-//         year: '',
-//       },
-//     });
-//     dispatch(transactionsActions.getIncomeTotalSuccess(data));
-//   } catch (error) {
-//     dispatch(transactionsActions.getIncomeTotalError(error.message));
-//   }
-// };
-
 const transactionsOperations = {
   fetchTransaction,
   setBalance,
@@ -166,8 +127,6 @@ const transactionsOperations = {
   getExpenseByDate,
   getIncomeByDate,
   deleteTransaction,
-  // getExpenseByMonth,
-  // getIncomeByMonth,
 };
 
 export default transactionsOperations;

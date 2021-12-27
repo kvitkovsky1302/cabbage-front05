@@ -1,20 +1,31 @@
 /*-------------------------стили для приватных роутов ---------------------------*/
 .background {
-  margin-left: auto;
+  height: 342px;
+  border-bottom-left-radius: 200px;
+  box-shadow: 4px 0px 4px 0px #00000025;
+  background: #f2f5fc;
+  width: 100%;
+  /* margin-left: auto;
   margin-right: auto;
   padding: 0 20px;
   background-image: url(../../images/background/background-m.png);
   background-size: 320px 342px;
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: top center; */
 }
 /* -----------------------------------tablet----------------------------------- */
 @media screen and (min-width: 768px) {
   .background {
+    /* background-image: url(../../images/background/background-t.png);
     padding: 0 50px;
-    background-image: url(../../images/background/background-t.png);
+
     background-size: 768px, 183px;
-    background-position: top center;
+    background-position: top center; */
+
+    height: 583px;
+    /* border-bottom-left-radius: 200px;
+    box-shadow: 4px 0px 4px 0px #00000025;
+    background: #f2f5fc; */
   }
   .coles {
     padding-top: 215px;
@@ -26,11 +37,13 @@
 }
 /* -----------------------------------------desktop----------------------------- */
 @media screen and (min-width: 1280px) {
-  .background {
-    padding: 0 110px;
+  /* .background {
     background-image: url(../../images/background/background-d.png);
     background-size: 1280px, 52px;
     background-position: top center;
+  } */
+
+    padding: 0 110px;
   }
   .coles {
     /* padding-top: 335px; */
@@ -39,6 +52,7 @@
     background-image: url(../../images/background/many\ coles.png);
     background-position: top center;
   }
+
 }
 
 /*-------------------------стили для публичных роутов ---------------------------*/

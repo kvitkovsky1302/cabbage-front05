@@ -5,8 +5,8 @@
     align-items: center;
     position: relative;
     /* min-width: 768px; */
-    height: 84px;
-    padding-top: 40px;
+    height: 44px;
+    /* padding-top: 40px; */
     margin-bottom: 58px;
   }
 }
@@ -18,8 +18,8 @@
     align-items: center;
     position: relative;
     /* width: 1060px; */
-    height: 84px;
-    padding-top: 40px;
+    height: 44px;
+    /* padding-top: 40px; */
     margin-bottom: 8px;
   }
 }

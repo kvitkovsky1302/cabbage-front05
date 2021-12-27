@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { NavLink, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Balance from '../Balance';
 import ToReportsBtn from '../ToReportsBtn';
 import GoBackBtn from '../GoBackBtn';

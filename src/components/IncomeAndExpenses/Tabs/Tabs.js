@@ -6,7 +6,6 @@ import s from './Tabs.module.css';
 import TransactionForm from '../TransactionForm';
 import TransactionsList from '../TransactionsList/TransactionsList';
 import Button from '../Button';
-// import { balanceOperations } from '../../../redux/balance';
 import authOperations from '../../../redux/auth/auth-operations';
 import authSelectors from '../../../redux/auth/auth-selectors';
 import {

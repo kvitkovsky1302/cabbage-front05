@@ -27,11 +27,11 @@
 }
 
 @media screen and (min-width: 1280px) {
-  .background {
-    /* background-image: url(../../images/background/background-d.png);
+  /* .background {
+    background-image: url(../../images/background/background-d.png);
     background-size: 1280px, 52px;
-    background-position: top center; */
-  }
+    background-position: top center;
+  } */
 }
 
 /*-------------------------стили для публичных роутов ---------------------------*/

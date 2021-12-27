@@ -19,7 +19,7 @@ const token = {
   },
 };
 
-const Balance = ({ hide, mobile }) => {
+const Balance = ({ mobile }) => {
   const location = useLocation();
 
   const balance = useSelector(authSelectors.getBalance);

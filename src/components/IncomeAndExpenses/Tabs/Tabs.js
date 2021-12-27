@@ -90,7 +90,7 @@ export default function Tabs() {
     console.log('data', data);
     if (income) {
       dispatch(transactionsOperations.addIncome(data, onSuccess));
-     }
+    }
     if (expense) {
       dispatch(transactionsOperations.addExpense(data, onSuccess));
     }
@@ -123,8 +123,8 @@ export default function Tabs() {
   };
 
   return (
-    <div>
-      <div className={s.tabsContainer}>
+    <div className={s.tabsContainer}>
+      <div>
         <Button
           onClick={clickExpense}
           className={

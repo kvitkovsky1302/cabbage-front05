@@ -12,6 +12,7 @@
     font-size: 12px;
     line-height: 14px;
     letter-spacing: 0.04em;
+    /* padding-left: 21px; */
   }
 
   .tableHead {
@@ -29,7 +30,7 @@
     text-transform: uppercase;
     color: #000;
     padding-right: 84px;
-    padding-left: 20px;
+    /* padding-left: 20px; */
   }
 
   .tableTransThDate {
@@ -44,6 +45,8 @@
 
   .tableTransThCategory {
     width: 119px;
+    padding-left: 50px;
+    /* text-align: center; */
   }
 
   .tableTransThCost {
@@ -103,6 +106,7 @@
 
   .tableTransThCategory {
     width: 150px;
+    padding-left: 70px;
   }
   .tableTransThCost {
     width: 146px;

@@ -23,6 +23,32 @@
     text-align: center;
   }
 
+  .tableCost {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 2px;
+    padding-right: 22px;
+    padding-left: 15px;
+  }
+
+  .tableAmountExpense,
+  .tableAmountIncome {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 104px;
+    height: 40px;
+    text-align: right;
+    color: #e7192e;
+    font-weight: 700;
+    margin-right: 40px;
+  }
+
+  .tableAmountIncome {
+    color: #407946;
+  }
+
   .tableDelete {
     text-align: center;
   }
@@ -38,5 +64,11 @@
 
   .deleteBtn:hover {
     background-color: #f5f6fb;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .tableCost {
+    padding-right: 46px;
   }
 }

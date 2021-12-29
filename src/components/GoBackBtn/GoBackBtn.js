@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 
-import { paths } from '../../config';
+import paths from '../../config';
 import { ReactComponent as GoBack } from '../../images/reportsCategories/goBack.svg';
 import s from './GoBackBtn.module.css';
 

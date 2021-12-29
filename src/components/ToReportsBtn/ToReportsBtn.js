@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { paths } from '../../config/index';
+import paths from '../../config/index';
 import { ReactComponent as BarChart } from '../../images/reports/barChart.svg';
 
 import s from './ToReportsBtn.module.css';

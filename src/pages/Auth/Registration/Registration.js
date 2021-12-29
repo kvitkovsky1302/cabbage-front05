@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate, NavLink } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
-import { paths } from '../../../config';
+import paths from '../../../config';
 import { SignInGoogle } from '../SignInGoogle/SigninGoogle';
 import authOperations from '../../../redux/auth/auth-operations';
 import authSelectors from '../../../redux/auth/auth-selectors';
+import LogoHero from '../../../components/LogoHero';
 
 import s from './RegisterAuth.module.css';
 import b from '../../../components/ButtonAuth/Button.module.css';
@@ -24,9 +25,9 @@ const Registration = () => {
 
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
 
- const goToLogin = () => {
-   // navigate(paths.login);
-   window.open(paths.login);
+  const goToLogin = () => {
+    // navigate(paths.login);
+    window.open(paths.login);
   };
 
   const validate = useCallback(values => {
@@ -76,13 +77,12 @@ const Registration = () => {
     const password = e.password;
 
     dispatch(authOperations.register({ name, email, password }));
-   // window.open('/');
+    // window.open('/');
   };
-
- 
 
   return (
     <div>
+      <LogoHero />
       {!isLoggedIn && (
         <div className={s.auth}>
           <p className={`${s.textGoogle} ${s.textAuth}`}>
@@ -165,15 +165,13 @@ const Registration = () => {
                   </Link>
                 </div>
                 <div className={s.btnRegister}>
-                  
                   <button
-                      type="submit"
-                      className={b.btnAuth}
-                      onClick = {goToLogin}
-                    >
-                      Зарегестрироваться
-                    </button>
-                  
+                    type="submit"
+                    className={b.btnAuth}
+                    onClick={goToLogin}
+                  >
+                    Зарегестрироваться
+                  </button>
                 </div>
               </Form>
             )}

@@ -1,0 +1,43 @@
+.backgroundPage {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+.background {
+  height: 342px;
+  border-bottom-left-radius: 100px;
+  background: #f5f6fb;
+  width: 100%;
+}
+
+.coles {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-image: url(../../../images/background/rotateCole.png),
+    url(../../../images/background/cole.png);
+  background-position: right -34px top 160px, left 35px top 767px;
+}
+
+@media screen and (min-width: 768px) {
+  .background {
+    height: 582px;
+    background-repeat: no-repeat;
+    background-image: url(../../../images/background/manyColes.png);
+    background-position: 10px 84px;
+    background-size: 1280px, 232px;
+  }
+
+  .coles {
+    background-repeat: no-repeat;
+    background-image: url(../../../images/background/doubleCole.png);
+    background-position: left 103px bottom 56px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .coles {
+    background-position: left 230px bottom 50px;
+  }
+}

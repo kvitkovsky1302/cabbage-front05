@@ -1,0 +1,38 @@
+.backgroundPage {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+.background {
+  height: 342px;
+  border-bottom-left-radius: 100px;
+  background: #f5f6fb;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .background {
+    height: 583px;
+  }
+
+  .coles {
+    z-index: -1;
+    position: absolute;
+    right: 88px;
+    bottom: 64px;
+    height: 142px;
+    width: 183px;
+    background-repeat: no-repeat;
+    background-image: url(../../../images/background/doubleCole.png);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .coles {
+    left: 10px;
+    bottom: 0px;
+    height: 194px;
+    width: 1280px;
+    background-image: url(../../../images/background/transColes.png);
+  }
+}

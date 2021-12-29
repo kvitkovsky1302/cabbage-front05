@@ -6,6 +6,7 @@ import { Formik, ErrorMessage } from 'formik';
 import { SignInGoogle } from '../SignInGoogle/SigninGoogle';
 import authOperations from '../../../redux/auth/auth-operations';
 import authSelectors from '../../../redux/auth/auth-selectors';
+import LogoHero from '../../../components/LogoHero';
 
 import s from './loginAuth.module.css';
 import b from '../../../components/ButtonAuth/Button.module.css';
@@ -49,6 +50,7 @@ const Login = () => {
 
   return (
     <div>
+      <LogoHero />
       {!isLoggedIn && (
         <div className={s.auth}>
           <p className={`${s.textGoogle} ${s.textAuth}`}>
@@ -116,7 +118,6 @@ const Login = () => {
           </Formik>
         </div>
       )}
-
     </div>
   );
 };

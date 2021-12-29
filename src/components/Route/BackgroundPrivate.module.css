@@ -1,4 +1,4 @@
-.background {
+/* .background {
   margin-left: auto;
   margin-right: auto;
   padding: 0 20px;
@@ -7,7 +7,7 @@
   background-repeat: no-repeat;
   background-position: top center;
 }
-/* -----------------------------------tablet----------------------------------- */
+
 @media screen and (min-width: 768px) {
   .background {
     padding: 0 50px;
@@ -23,7 +23,7 @@
     background-position: bottom 64px right 88px;
   }
 }
-/* -----------------------------------------desktop----------------------------- */
+
 @media screen and (min-width: 1280px) {
   .background {
     padding: 0 110px;
@@ -37,4 +37,4 @@
     background-image: url(../../images/background/many\ coles.png);
     background-position: top 30px center;
   }
-}
+} */

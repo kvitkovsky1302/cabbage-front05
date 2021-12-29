@@ -86,7 +86,6 @@ export default function Tabs() {
   };
 
   const handleSubmit = data => {
-    console.log('data', data);
     if (income) {
       dispatch(transactionsOperations.addIncome(data, onSuccess));
     }

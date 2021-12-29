@@ -1,4 +1,4 @@
-/*------------------------------------ mobile -----------------------------------*/
+/*
 .background {
   margin-left: auto;
   margin-right: auto;
@@ -41,7 +41,7 @@
   text-transform: uppercase;
   color: #52555f;
 }
-/* ----------------------------------------tablet------------------------------ */
+
 @media screen and (min-width: 768px) {
   .background {
     max-width: 768px;
@@ -78,7 +78,7 @@
     letter-spacing: 0.18em;
   }
 }
-/* ----------------------------------------desktop------------------------------- */
+
 @media screen and (min-width: 1280px) {
   .background {
     max-width: 1280px;
@@ -112,4 +112,4 @@
     top: 365px;
     left: 302px;
   }
-}
+} */

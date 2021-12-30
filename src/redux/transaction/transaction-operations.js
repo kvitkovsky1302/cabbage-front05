@@ -1,6 +1,5 @@
 import axios from 'axios';
 import moment from 'moment';
-// import moment from 'moment';
 import transactionsActions from './transaction-actions';
 
 moment.updateLocale('ru', {

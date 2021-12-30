@@ -1,0 +1,28 @@
+.table {
+  width: 230px;
+  height: 278px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background: #f5f6fb;
+}
+
+.tableRow {
+  height: 38px;
+  border-bottom: 2px solid #ffffff;
+}
+
+.headerText {
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: #000000;
+}

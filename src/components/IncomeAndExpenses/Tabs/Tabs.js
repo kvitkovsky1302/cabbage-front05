@@ -8,10 +8,13 @@ import TransactionsList from '../TransactionsList/TransactionsList';
 import Button from '../Button';
 import authOperations from '../../../redux/auth/auth-operations';
 import authSelectors from '../../../redux/auth/auth-selectors';
+import Summary from '../../Summury/Summary';
 import {
   transactionsOperations,
   transactionsSelectors,
 } from '../../../redux/transaction';
+
+import { summaryOperations, summarySelectors } from '../../../redux/summary';
 import axios from 'axios';
 
 const optionsExpense = [
@@ -50,12 +53,14 @@ export default function Tabs() {
 
   const selectedDate = useSelector(transactionsSelectors.currentDate);
   const transactions = useSelector(transactionsSelectors.getTransactions);
+  // const summary = useSelector(summarySelectors.getMonthTransaction);
   const setToken = useSelector(authSelectors.getToken);
 
   useEffect(() => {
     token.set(setToken);
     const momentDate = moment().valueOf();
     dispatch(transactionsOperations.getExpenseByDate(momentDate));
+    // dispatch(summaryOperations.fetchMonthExpenses);
   }, [dispatch]);
 
   const clickExpense = () => {
@@ -152,6 +157,7 @@ export default function Tabs() {
             transactions={transactions}
             onDelete={onDeleteTransaction}
           />
+          <Summary date={selectedDate} />
           {/* <Brief selectedDate={selectedDate} incomes={false} /> */}
         </div>
       ) : (

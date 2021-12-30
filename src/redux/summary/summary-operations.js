@@ -1,0 +1,27 @@
+import axios from 'axios';
+import moment from 'moment';
+import summaryActions from './summary-actions';
+
+export const fetchMonthExpenses = date => async dispatch => {
+  dispatch(summaryActions.fetchMonthExpensesRequest());
+  const month = moment(Number(date)).format('MM');
+
+  try {
+    const { data } = await axios.get(`/expense?`, {
+      params: {
+        category: '',
+        month,
+        year: '',
+      },
+    });
+    dispatch(summaryActions.fetchMonthExpensesSuccess(data));
+  } catch (error) {
+    dispatch(summaryActions.fetchMonthExpensesError(error));
+  }
+};
+
+const summaryOperations = {
+  fetchMonthExpenses,
+};
+
+export default summaryOperations;

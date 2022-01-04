@@ -1,14 +1,54 @@
 .table {
-  width: 230px;
+  width: 234px;
   height: 278px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   background: #f5f6fb;
+  overflow-y: scroll;
+  /* box-sizing: border-box; */
+}
+
+.table::-webkit-scrollbar {
+  width: 4px;
+  border-radius: 2px;
+  background: transparent;
+}
+
+.table::-webkit-scrollbar-thumb {
+  background-color: #fc842d;
+  border-radius: 2px;
+}
+
+.tableHeadRow,
+.tableRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 38px;
+  /* border-bottom: 2px solid #ffffff; */
+  padding-left: 22px;
+  padding-right: 20px;
+  box-sizing: content-box;
+}
+
+.tableHeadRow {
+  justify-content: center;
 }
 
 .tableRow {
-  height: 38px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #52555f;
+}
+
+.tableHeadRow,
+.tableRow:not(:last-child) {
   border-bottom: 2px solid #ffffff;
 }
 
@@ -25,4 +65,19 @@
   text-transform: uppercase;
 
   color: #000000;
+}
+
+@media screen and (min-width: 768px) {
+  .table {
+    position: absolute;
+    /* top: 0px; */
+    bottom: -318px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .table {
+    position: relative;
+    bottom: 0px;
+  }
 }

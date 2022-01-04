@@ -36,14 +36,14 @@ const optionsIncome = [
   { value: 'additional', label: 'Доп. доход' },
 ];
 
-const token = {
-  set(token) {
-    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-  },
-  unset() {
-    axios.defaults.headers.common.Authorization = '';
-  },
-};
+// const token = {
+//   set(token) {
+//     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+//   },
+//   unset() {
+//     axios.defaults.headers.common.Authorization = '';
+//   },
+// };
 
 export default function Tabs() {
   const [expense, setExpense] = useState(true);
@@ -54,14 +54,14 @@ export default function Tabs() {
   const selectedDate = useSelector(transactionsSelectors.currentDate);
   const transactions = useSelector(transactionsSelectors.getTransactions);
   // const summary = useSelector(summarySelectors.getMonthTransaction);
-  const setToken = useSelector(authSelectors.getToken);
+  // const setToken = useSelector(authSelectors.getToken);
 
   useEffect(() => {
-    token.set(setToken);
-    const momentDate = moment().valueOf();
+    // token.set(setToken);
+    const momentDate = moment(selectedDate).valueOf();
     dispatch(transactionsOperations.getExpenseByDate(momentDate));
     // dispatch(summaryOperations.fetchMonthExpenses);
-  }, [dispatch]);
+  }, [dispatch, selectedDate]);
 
   const clickExpense = () => {
     if (expense) return;
@@ -153,12 +153,13 @@ export default function Tabs() {
             onSubmit={handleSubmit}
             placeholder="Категория товара"
           />
-          <TransactionsList
-            transactions={transactions}
-            onDelete={onDeleteTransaction}
-          />
-          <Summary date={selectedDate} />
-          {/* <Brief selectedDate={selectedDate} incomes={false} /> */}
+          <div className={s.reportBlock}>
+            <TransactionsList
+              transactions={transactions}
+              onDelete={onDeleteTransaction}
+            />
+            <Summary date={selectedDate} />
+          </div>
         </div>
       ) : (
         <div className={s.counterTabContainer}>
@@ -168,12 +169,14 @@ export default function Tabs() {
             onSubmit={handleSubmit}
             placeholder="Категория дохода"
           />
-          <TransactionsList
-            transactions={transactions}
-            income={income}
-            onDelete={onDeleteTransaction}
-          />
-          {/* <Brief incomes={true} selectedDate={selectedDate} /> */}
+          <div className={s.reportBlock}>
+            <TransactionsList
+              transactions={transactions}
+              income={income}
+              onDelete={onDeleteTransaction}
+            />
+            <Summary date={selectedDate} income={income} />
+          </div>
         </div>
       )}
       {/* <TransactionForm options={optionsExpense} /> */}

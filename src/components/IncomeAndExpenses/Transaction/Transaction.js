@@ -11,6 +11,10 @@ export default function Transaction({ item, income, onDelete }) {
     ? `${s.tableAmountIncome}`
     : `${s.tableAmountExpense}`;
 
+  const numberEditor = number => {
+    return (number = number.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 '));
+  };
+
   return (
     <tr className={s.tableTr}>
       <td className={s.tableDate}>{moment(item.date).format('DD.MM.yyyy')}</td>
@@ -24,7 +28,7 @@ export default function Transaction({ item, income, onDelete }) {
       </td>
       <td className={s.tableCategory}>{item.category}</td>
       <td className={s.tableCost}>
-        <span className={currClass}>{`${currCost}.00 грн.`}</span>
+        <span className={currClass}>{`${numberEditor(currCost)}.00 грн.`}</span>
         <span className={s.tableDelete}>
           <Button
             type="button"

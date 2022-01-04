@@ -5,7 +5,8 @@ import '@pnotify/core/dist/PNotify.css';
 import * as PNotifyMobile from '@pnotify/mobile';
 import '@pnotify/mobile/dist/PNotifyMobile.css';
 
-axios.defaults.baseURL = 'https://second-serv.herokuapp.com/api';
+axios.defaults.baseURL = 'http://localhost:3001/api';
+// 'https://second-serv.herokuapp.com/api';
 
 //на все запроссы авторизации
 const token = {

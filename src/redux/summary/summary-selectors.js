@@ -1,4 +1,6 @@
-const getMonthTransaction = state => state.summary;
+const getMonthTransaction = state => {
+  return state.summary;
+};
 
 const summarySelectors = {
   getMonthTransaction,

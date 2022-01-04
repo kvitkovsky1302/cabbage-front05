@@ -19,8 +19,8 @@
   .coles {
     z-index: -1;
     position: absolute;
-    right: 88px;
-    bottom: 64px;
+    left: 64%;
+    top: 1033px;
     height: 142px;
     width: 183px;
     background-repeat: no-repeat;
@@ -31,6 +31,7 @@
   .coles {
     left: 10px;
     bottom: 0px;
+    top: auto;
     height: 194px;
     width: 1280px;
     background-image: url(../../../images/background/transColes.png);

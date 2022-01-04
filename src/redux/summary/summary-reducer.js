@@ -4,8 +4,7 @@ import summaryActions from './summary-actions';
 
 const summary = createReducer([], {
   [summaryActions.fetchMonthExpensesSuccess]: (_, { payload }) => {
-    console.log('payload', payload);
-    return payload.totalSum;
+    return payload.data;
   },
   [summaryActions.fetchMonthIncomesSuccess]: (_, { payload }) => payload.data,
 });

@@ -12,6 +12,7 @@
   }
 
   .counterTabContainer {
+    position: relative;
     padding: 30px 30px 48px 30px;
     background-color: #ffffff;
     box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
@@ -22,10 +23,16 @@
 @media screen and (min-width: 1280px) {
   .counterTabContainer {
     padding-top: 33px;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 
   .tabsContainer {
     padding-bottom: 60px;
+  }
+
+  .reportBlock {
+    display: flex;
   }
 }
 

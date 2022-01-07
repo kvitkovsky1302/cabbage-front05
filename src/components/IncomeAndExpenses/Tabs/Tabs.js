@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment';
 import { toast } from 'react-toastify';
@@ -7,7 +7,7 @@ import TransactionForm from '../TransactionForm';
 import TransactionsList from '../TransactionsList/TransactionsList';
 import Button from '../Button';
 import authOperations from '../../../redux/auth/auth-operations';
-import authSelectors from '../../../redux/auth/auth-selectors';
+// import authSelectors from '../../../redux/auth/auth-selectors';
 import Summary from '../../Summury/Summary';
 import {
   transactionsOperations,
@@ -15,7 +15,7 @@ import {
 } from '../../../redux/transaction';
 
 import { summaryOperations, summarySelectors } from '../../../redux/summary';
-import axios from 'axios';
+// import axios from 'axios';
 
 const optionsExpense = [
   { value: 'transport', label: 'Транспорт' },
@@ -25,7 +25,7 @@ const optionsExpense = [
   { value: 'entertainment', label: 'Развлечения' },
   { value: 'home', label: 'Всё для дома' },
   { value: 'technics', label: 'Техника' },
-  { value: 'bill', label: 'Комуналка, связь' },
+  { value: 'bill', label: 'Коммуналка, связь' },
   { value: 'sport', label: 'Спорт, хобби' },
   { value: 'education', label: 'Образование' },
   { value: 'other', label: 'Прочее' },
@@ -53,21 +53,36 @@ export default function Tabs() {
 
   const selectedDate = useSelector(transactionsSelectors.currentDate);
   const transactions = useSelector(transactionsSelectors.getTransactions);
-  // const summary = useSelector(summarySelectors.getMonthTransaction);
-  // const setToken = useSelector(authSelectors.getToken);
+
+  const getIncomes = useCallback(
+    momentDate => {
+      dispatch(transactionsOperations.getIncomeByDate(momentDate));
+    },
+    [dispatch],
+  );
+
+  const getExpenses = useCallback(
+    momentDate => {
+      dispatch(transactionsOperations.getExpenseByDate(momentDate));
+    },
+    [dispatch],
+  );
 
   useEffect(() => {
-    // token.set(setToken);
     const momentDate = moment(selectedDate).valueOf();
-    dispatch(transactionsOperations.getExpenseByDate(momentDate));
-    // dispatch(summaryOperations.fetchMonthExpenses);
-  }, [dispatch, selectedDate]);
+    if (income) {
+      getIncomes(momentDate);
+    }
+    if (!income) {
+      getExpenses(momentDate);
+    }
+  }, [getIncomes, getExpenses, income, selectedDate]);
 
   const clickExpense = () => {
     if (expense) return;
     setIncome(false);
     setExpense(true);
-    const momentDate = moment().valueOf();
+    const momentDate = moment(selectedDate).valueOf();
     dispatch(transactionsOperations.getExpenseByDate(momentDate));
   };
 
@@ -75,18 +90,21 @@ export default function Tabs() {
     if (income) return;
     setIncome(true);
     setExpense(false);
-    const momentDate = moment().valueOf();
+    const momentDate = moment(selectedDate).valueOf();
     dispatch(transactionsOperations.getIncomeByDate(momentDate));
   };
 
   const onSuccess = () => {
     toast.success('Transaction successfully added.');
     dispatch(authOperations.getBalance());
+
     if (income) {
       dispatch(transactionsOperations.getIncomeByDate(selectedDate));
+      dispatch(summaryOperations.fetchMonthIncomes());
     }
     if (expense) {
       dispatch(transactionsOperations.getExpenseByDate(selectedDate));
+      dispatch(summaryOperations.fetchMonthExpenses());
     }
   };
 
@@ -113,11 +131,14 @@ export default function Tabs() {
   const onDeleteTransactionSuccess = () => {
     toast.success('Transaction has been deleted.');
     dispatch(authOperations.getBalance());
+
     if (income) {
       dispatch(transactionsOperations.getIncomeByDate(selectedDate));
+      dispatch(summaryOperations.fetchMonthIncomes());
     }
     if (expense) {
       dispatch(transactionsOperations.getExpenseByDate(selectedDate));
+      dispatch(summaryOperations.fetchMonthExpenses());
     }
   };
 

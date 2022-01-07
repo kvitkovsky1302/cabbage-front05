@@ -19,9 +19,27 @@ export const fetchMonthExpenses = date => async dispatch => {
     dispatch(summaryActions.fetchMonthExpensesError(error));
   }
 };
+export const fetchMonthIncomes = date => async dispatch => {
+  dispatch(summaryActions.fetchMonthIncomesRequest());
+  // const month = moment(Number(date)).format('MM');
+
+  try {
+    const { data } = await axios.get(`/income?`, {
+      params: {
+        category: '',
+        month: '',
+        yearSummary: true,
+      },
+    });
+    dispatch(summaryActions.fetchMonthIncomesSuccess(data));
+  } catch (error) {
+    dispatch(summaryActions.fetchMonthIncomesError(error));
+  }
+};
 
 const summaryOperations = {
   fetchMonthExpenses,
+  fetchMonthIncomes,
 };
 
 export default summaryOperations;

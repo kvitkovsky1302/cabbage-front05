@@ -8,7 +8,6 @@ const transactionsSelectors = {
   getTransactions,
   getIsLoading,
   getTotalBalance,
-
 };
 
 export default transactionsSelectors;

@@ -1,22 +1,16 @@
-import GoBackBtn from '../../components/GoBackBtn';
-import Balance from '../../components/Balance';
-import ChosenMonth from '../../components/ChosenMonth';
+import BalanceComponent from '../../components/BalanceComponent';
 import ReportsCategories from '../../components/ReportsCategories';
 import ExponsesAndIncome from '../../components/TransactionsPerMonth';
 import s from './Reports.module.css';
 
-const Reports = () => {
+export default function Reports() {
   return (
-    <div className={s.section}>
-      <div className={s.balanceWrapper}>
-        <GoBackBtn />
-        <Balance />
-        <ChosenMonth />
+    <div className={s.reportsContainer}>
+      <div className={s.balanceContainer}>
+        <BalanceComponent />
       </div>
       <ExponsesAndIncome />
       <ReportsCategories />
     </div>
   );
-};
-
-export default Reports;
+}

@@ -23,17 +23,16 @@
     top: 1033px;
     height: 142px;
     width: 183px;
-    background-repeat: no-repeat;
     background-image: url(../../../images/background/doubleCole.png);
   }
 }
 @media screen and (min-width: 1280px) {
   .coles {
     left: 10px;
-    bottom: 0px;
+    bottom: -20px;
     top: auto;
     height: 194px;
-    width: 1280px;
+    width: 100%;
     background-image: url(../../../images/background/transColes.png);
   }
 }

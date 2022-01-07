@@ -81,9 +81,9 @@ export default function Charts({ descriptionList }) {
           'rgb(255, 218, 192)',
           'rgb(255, 218, 192)',
         ],
-        barThickness: 20,
+        barThickness: 38,
         // barPercentage: 0.1,
-        borderRadius: 6,
+        borderRadius: 10,
       },
     ],
   };

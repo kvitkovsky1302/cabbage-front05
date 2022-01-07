@@ -14,14 +14,6 @@ export default function Income() {
     state => state.desiredMonth.IncomePerDesiredMonth.data,
   );
 
-  //Имитация данных, полученных с бекенда
-  // const backendCategories = [
-  //   { sum: 100, category: 'ЗП', description: 'Аванс' },
-  //   { sum: 50, category: 'ЗП', description: 'Доплата' },
-  //   { sum: 1000, category: 'Доп.доход', description: 'Взятка' },
-  //   { sum: 1000, category: 'Доп.доход', description: 'Взятка' },
-  // ];
-
   //Задает в стейт значение поля "имя"
   function onClickSetActiveValue(value) {
     setActiveValue(value);
@@ -42,10 +34,10 @@ export default function Income() {
       },
       {
         sum: null,
-        category: 'Доп.доход',
+        category: 'Доп. доход',
         img: (
           <AdditionalIncome
-            className={activeValue === 'Доп.доход' ? s.activeSvg : s.svg}
+            className={activeValue === 'Доп. доход' ? s.activeSvg : s.svg}
           />
         ),
       },

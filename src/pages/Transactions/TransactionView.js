@@ -7,7 +7,9 @@ export default function TransactionView() {
   return (
     <>
       <div className={s.transactionsContainer}>
-        <BalanceComponent />
+        <div className={s.balanceContainer}>
+          <BalanceComponent />
+        </div>
         <Tabs />
       </div>
     </>

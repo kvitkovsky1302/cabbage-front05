@@ -1,5 +1,5 @@
 import React, { useState, useEffect, forwardRef } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import ru from 'date-fns/locale/ru';
@@ -11,6 +11,7 @@ import Button from '../Button';
 import {
   transactionsOperations,
   transactionsActions,
+  transactionsSelectors,
 } from '../../../redux/transaction';
 import { ReactComponent as Calendar } from '../../../images/reportsCategories/calendar.svg';
 
@@ -29,16 +30,18 @@ export default function TransactionForm({
 
   const dispatch = useDispatch();
 
+  const selectedDate = useSelector(transactionsSelectors.currentDate);
+
   useEffect(() => {
     if (!income) {
-      const formatDate = moment().valueOf();
-      dispatch(transactionsOperations.getExpenseByDate(formatDate));
+      const momentDate = moment(selectedDate).valueOf();
+      dispatch(transactionsOperations.getExpenseByDate(momentDate));
     }
     if (income) {
-      const momentDate = moment().valueOf();
+      const momentDate = moment(selectedDate).valueOf();
       dispatch(transactionsOperations.getIncomeByDate(momentDate));
     }
-  }, [dispatch, date, income]);
+  }, [dispatch, date, income, selectedDate]);
 
   useEffect(() => {
     handleClearForm();
@@ -58,14 +61,11 @@ export default function TransactionForm({
     e.preventDefault();
 
     const transaction = { date, description, category: category.label, sum };
-    console.log('transaction', transaction);
-    console.log('date', moment(date).format('DD MMM YYYY hh:mm a'));
     onSubmit(transaction);
     handleClearForm();
   };
 
   const handleClearForm = () => {
-    setDate(moment().valueOf());
     seDescription('');
     setCategory('');
     setSum('');

@@ -19,16 +19,16 @@ moment.updateLocale('ru', {
   ],
 });
 
-export const fetchTransaction = () => async dispatch => {
-  dispatch(transactionsActions.fetchExpenseRequest());
+// export const fetchTransaction = () => async dispatch => {
+//   dispatch(transactionsActions.fetchExpenseRequest());
 
-  try {
-    const transactions = await axios.get('/transactions');
-    dispatch(transactionsActions.fetchExpenseSuccess(transactions));
-  } catch (error) {
-    dispatch(transactionsActions.fetchExpenseError(error));
-  }
-};
+//   try {
+//     const transactions = await axios.get('/transactions');
+//     dispatch(transactionsActions.fetchExpenseSuccess(transactions));
+//   } catch (error) {
+//     dispatch(transactionsActions.fetchExpenseError(error));
+//   }
+// };
 
 const setBalance = balance => async dispatch => {
   dispatch(transactionsActions.setTotalBalanceRequest());
@@ -83,33 +83,35 @@ export const deleteTransaction =
   };
 
 const getExpenseByDate = date => async dispatch => {
-  dispatch(transactionsActions.getExpenseByDateRequest());
+  dispatch(transactionsActions.getExpenseByDateRequest(date));
   const month = moment(Number(date)).format('MM');
+  const year = moment(Number(date)).format('YYYY');
 
   try {
     const { data } = await axios.get(`/expense?`, {
       params: {
         category: '',
         month,
-        year: '',
+        year,
       },
     });
     dispatch(transactionsActions.getExpenseByDateSuccess(data));
   } catch (error) {
-    dispatch(transactionsActions.getExpenseByDateError());
+    dispatch(transactionsActions.getExpenseByDateError(error));
   }
 };
 
 const getIncomeByDate = date => async dispatch => {
-  dispatch(transactionsActions.getIncomeByDateRequest());
+  dispatch(transactionsActions.getIncomeByDateRequest(date));
   const month = moment(Number(date)).format('MM');
+  const year = moment(Number(date)).format('YYYY');
 
   try {
     const { data } = await axios.get(`/income?`, {
       params: {
         category: '',
         month,
-        year: '',
+        year,
       },
     });
     dispatch(transactionsActions.getIncomeByDateSuccess(data));
@@ -119,7 +121,7 @@ const getIncomeByDate = date => async dispatch => {
 };
 
 const transactionsOperations = {
-  fetchTransaction,
+  // fetchTransaction,
   setBalance,
   addExpense,
   addIncome,

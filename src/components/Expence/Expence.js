@@ -17,22 +17,12 @@ import s from './Expence.module.css';
 export default function Expence() {
   const [activeValue, setActiveValue] = useState('');
   const [descriptionList, setDescriptionList] = useState([]);
-  // console.log(descriptionList);
 
   // Получаем данные расходов из редакса
   const expenceData = useSelector(
     state => state.desiredMonth.ExponsePerDesiredMonth.data,
   );
-
-  //Имитация данных, полученных из редакса
-  // const backendCategories = [
-  //   { sum: 100, category: 'Транспорт', description: 'Taxi' },
-  //   { sum: 100, category: 'Транспорт', description: 'Bus' },
-  //   { sum: 100, category: 'Транспорт', description: 'Air' },
-  //   { sum: 100, category: 'Продукты', description: 'Bananas' },
-  //   { sum: 100, category: 'Здоровье', description: 'Hospital' },
-  //   { sum: 100, category: 'Алкоголь', description: 'Beer' },
-  // ];
+  console.log('expenceData', expenceData);
 
   //Задает в стейт значение поля "имя"
   function onClickSetActiveValue(value) {
@@ -85,19 +75,19 @@ export default function Expence() {
       },
       {
         sum: null,
-        category: 'Развлечение',
+        category: 'Развлечения',
         img: (
           <Entertainment
-            className={activeValue === 'Развлечение' ? s.activeSvg : s.svg}
+            className={activeValue === 'Развлечения' ? s.activeSvg : s.svg}
           />
         ),
       },
       {
         sum: null,
-        category: 'Все для дома',
+        category: 'Всё для дома',
         img: (
           <Housing
-            className={activeValue === 'Все для дома' ? s.activeSvg : s.svg}
+            className={activeValue === 'Всё для дома' ? s.activeSvg : s.svg}
           />
         ),
       },

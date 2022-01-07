@@ -44,6 +44,7 @@
   font-weight: 700;
   letter-spacing: 0.04em;
   color: #e53935;
+  margin-left: 15px;
 }
 
 .itemIncome {
@@ -51,6 +52,7 @@
   font-weight: 700;
   letter-spacing: 0.04em;
   color: #407946;
+  margin-left: 15px;
 }
 
 @media screen and (min-width: 768px) {
@@ -64,9 +66,9 @@
     flex-direction: row;
   }
 
-  .itemName {
+  /* .itemName {
     margin-right: 15px;
-  }
+  } */
 }
 @media screen and (min-width: 1280px) {
   .list {

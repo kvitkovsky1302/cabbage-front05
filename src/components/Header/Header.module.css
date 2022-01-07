@@ -1,5 +1,5 @@
 .logo {
-  margin-left: 19px;
+  /* margin-left: 19px; */
   margin-top: 12px;
 }
 
@@ -7,6 +7,8 @@
   display: flex;
   width: auto;
   height: 56px;
+  padding-left: 12px;
+  padding-right: 19px;
   background-color: #ffffff;
 }
 
@@ -14,7 +16,7 @@
   width: 12px;
   height: 16px;
   margin-top: 20px;
-  margin-right: 19px;
+  /* margin-right: 19px; */
   margin-left: 15px;
   background: none;
   padding: 0;
@@ -46,11 +48,12 @@
 @media (min-width: 768px) {
   .headerContainer {
     width: auto;
+    padding-left: 26px;
   }
 
-  .logo {
+  /* .logo {
     margin-left: 26px;
-  }
+  } */
   .userName {
     display: flex;
     margin-top: 21px;
@@ -100,6 +103,7 @@
 @media (min-width: 1280px) {
   .headerContainer {
     width: auto;
+    padding-right: 50px;
   }
 
   .logo {
@@ -108,7 +112,7 @@
   /* .user {
     margin-left: 908px;
   } */
-  .tabletLogout {
+  /* .tabletLogout {
     margin-right: 10px;
-  }
+  } */
 }

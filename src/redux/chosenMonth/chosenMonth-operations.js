@@ -37,7 +37,6 @@ const fatchTransactionsPerMonth = date => async dispatch => {
         year: '',
       },
     });
-    console.log(expenseData);
     dispatch(fatchExpensePerMonthSuccess(expenseData.data));
     dispatch(fatchIncomePerMonthSuccess(incomeData.data));
   } catch (error) {

@@ -13,6 +13,7 @@ export default function Income() {
   const incomeData = useSelector(
     state => state.desiredMonth.IncomePerDesiredMonth.data,
   );
+  console.log('incomeData', incomeData);
 
   //Задает в стейт значение поля "имя"
   function onClickSetActiveValue(value) {
@@ -60,23 +61,27 @@ export default function Income() {
 
   return (
     <>
-      <ul className={s.list}>
-        {categoriesList &&
-          categoriesList.map(({ sum, category, img }) => (
-            <li key={category} className={s.item}>
-              <button
-                onClick={() => onClickSetActiveValue(category)}
-                className={s.button}
-              >
-                <span className={s.price}>{sum.toFixed(2)}</span>
-                {img}
-                <span className={s.category}>{category}</span>
-              </button>
-            </li>
-          ))}
-      </ul>
+      <div className={s.wrapList}>
+        <ul className={s.list}>
+          {categoriesList &&
+            categoriesList.map(({ sum, category, img }) => (
+              <li key={category} className={s.item}>
+                <button
+                  onClick={() => onClickSetActiveValue(category)}
+                  className={s.button}
+                >
+                  <span className={s.price}>{sum.toFixed(2)}</span>
+                  {img}
+                  <span className={s.category}>{category}</span>
+                </button>
+              </li>
+            ))}
+        </ul>
+      </div>
       {descriptionList.length > 0 && (
-        <Charts descriptionList={descriptionList} />
+        <div className={s.wrapCharts}>
+          <Charts descriptionList={descriptionList} />
+        </div>
       )}
     </>
   );

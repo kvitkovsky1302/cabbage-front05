@@ -1,3 +1,17 @@
+.wrapList {
+  background: #ffffff;
+
+  box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+  border-radius: 30px;
+}
+
+.wrapChart {
+  background: #ffffff;
+
+  box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+  border-radius: 30px;
+}
+
 .list {
   display: flex;
   flex-wrap: wrap;

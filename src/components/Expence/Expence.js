@@ -155,6 +155,7 @@ export default function Expence() {
   //Пропускаем коллекцию полученную из редакса через функцию match
   const categoriesList = match(expenceData);
 
+
   return (
     <>
       <ul className={s.list}>
@@ -177,7 +178,7 @@ export default function Expence() {
         {categoriesList.length > 8 && <div className={s.line3}></div>}
       </ul>
       {descriptionList.length > 0 && (
-        <Charts descriptionList={descriptionList} />
+        <Charts descriptionList={descriptionList} expense />
       )}
     </>
   );

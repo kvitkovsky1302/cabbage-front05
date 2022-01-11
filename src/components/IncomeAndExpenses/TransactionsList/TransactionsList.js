@@ -33,16 +33,18 @@ const TransactionsList = ({ income, transactions, onDelete }) => {
             </tr>
           ) : (
             transactions.length > 0 &&
-            transactions.map(item => {
-              return (
-                <Transaction
-                  key={item._id}
-                  item={item}
-                  income={income}
-                  onDelete={onDelete}
-                />
-              );
-            })
+            [...transactions]
+              .sort((a, b) => a.date - b.date)
+              .map(item => {
+                return (
+                  <Transaction
+                    key={item._id}
+                    item={item}
+                    income={income}
+                    onDelete={onDelete}
+                  />
+                );
+              })
           )}
         </tbody>
       </table>

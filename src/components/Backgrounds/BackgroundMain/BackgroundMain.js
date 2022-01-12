@@ -15,7 +15,12 @@ export default function BackgroundMain({ children }) {
   return (
     <>
       {locationLogin && <BackgroundLogin>{children}</BackgroundLogin>};
-      {locationTrans && <BackgroundTrans>{children}</BackgroundTrans>};
+      {locationTrans && (
+        <BackgroundTrans location={location.pathname === paths.reports}>
+          {children}
+        </BackgroundTrans>
+      )}
+      ;
     </>
   );
 }

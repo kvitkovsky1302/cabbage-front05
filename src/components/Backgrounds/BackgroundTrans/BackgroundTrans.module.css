@@ -2,6 +2,7 @@
   position: relative;
   height: 100vh;
   width: 100%;
+  overflow: hidden;
 }
 
 .background {
@@ -16,14 +17,20 @@
     height: 583px;
   }
 
-  .coles {
+  .coles,
+  .colesTr {
     z-index: -1;
     position: absolute;
     left: 64%;
-    top: 1033px;
+    /* top: 1033px; */
+    bottom: -39px;
     height: 142px;
     width: 183px;
     background-image: url(../../../images/background/doubleCole.png);
+  }
+
+  .colesTr {
+    bottom: 64px;
   }
 }
 @media screen and (min-width: 1280px) {

@@ -36,6 +36,27 @@ export default function ReportsCategories() {
     state => state.desiredMonth.ExponsePerDesiredMonth.data,
   );
 
+  const memoizedOnClickToggle = useCallback(() => {
+    setToggle(!toggle);
+  }, [toggle]);
+
+  useEffect(() => {
+    setDescriptionList(categoriesList);
+  }, [toggle]);
+
+  useEffect(() => {
+    function handleKeyDown(e) {
+      if (e.code === 'ArrowLeft' || e.code === 'ArrowRight') {
+        memoizedOnClickToggle();
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [memoizedOnClickToggle]);
+
   const incomeCategories = [
     {
       sum: null,
@@ -61,12 +82,12 @@ export default function ReportsCategories() {
       category: 'Транспорт',
       description: 'Транспорт',
       img: (
-        // <Transport
-        //   className={activeValue === 'Транспорт' ? s.activeSvg : s.svg}
-        // />
-        <svg className={s.svg} title="Транспорт">
-          <use xlinkHref={`${sprite}#Транспорт`} title="Транспорт" />
-        </svg>
+        <Transport
+          className={activeValue === 'Транспорт' ? s.activeSvg : s.svg}
+        />
+        // <svg className={s.svg} title="Транспорт">
+        //   <use xlinkHref={`${sprite}#Транспорт`} title="Транспорт" />
+        // </svg>
       ),
     },
     {
@@ -172,7 +193,7 @@ export default function ReportsCategories() {
   const categories = toggle ? incomeCategories : expenceCategories;
   const Data = toggle ? incomeData : expenseData;
 
-  function matchIncome(arr, categories) {
+  function match(arr, categories) {
     arr &&
       arr.forEach(({ sum, category }) => {
         if (sum > 0) {
@@ -187,101 +208,41 @@ export default function ReportsCategories() {
     return categorieslist;
   }
 
-  const categoriesListIncome = matchIncome(Data, categories);
+  const categoriesList = match(Data, categories);
 
-  function matchExp(arr) {
-    arr &&
-      arr.forEach(({ sum, category }) => {
-        if (sum > 0) {
-          expenceCategories.forEach(el => {
-            if (el.category === category) {
-              el.sum += sum;
-            }
-          });
-        }
-      });
-    const categorieslist = expenceCategories.filter(({ sum }) => sum > 0);
-    return categorieslist;
-  }
-
-  const categoriesListExp = matchExp(Data, categories);
-
-  const memoizedOnClickToggle = useCallback(() => {
-    setToggle(!toggle);
-  }, [toggle]);
-
-  useEffect(() => {
-    toggle
-      ? setDescriptionList(categoriesListIncome)
-      : setDescriptionList(categoriesListExp);
-  }, [toggle]);
-
-  useEffect(() => {
-    function handleKeyDown(e) {
-      if (e.code === 'ArrowLeft' || e.code === 'ArrowRight') {
-        memoizedOnClickToggle();
-      }
-    }
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [memoizedOnClickToggle]);
-
-  let data = toggle ? 'ДОХОДЫ' : 'РАСХОДЫ';
+  const data = toggle ? 'ДОХОДЫ' : 'РАСХОДЫ';
 
   return (
     <section className={s.reports}>
       <div className={s.wrapper}>
         <div className={s.navigationWrapper}>
-          <button onClick={memoizedOnClickToggle} className={s.button}>
-            <LeftArrow className={s.svg} />
+          <button onClick={memoizedOnClickToggle} className={s.buttonArrow}>
+            <LeftArrow className={s.svgArrow} />
           </button>
           <div className={s.dataWrapper}>
             <div className={s.data}>{data}</div>
           </div>
-          <button onClick={memoizedOnClickToggle} className={s.button}>
-            <RightArrow className={s.svg} />
+          <button onClick={memoizedOnClickToggle} className={s.buttonArrow}>
+            <RightArrow className={s.svgArrow} />
           </button>
         </div>
-        {toggle ? (
-          <div className={s.wrapList}>
-            <ul className={s.list}>
-              {categoriesListIncome &&
-                categoriesListIncome.map(({ sum, category, img }) => (
-                  <li key={category} className={s.item}>
-                    <button
-                      onClick={() =>
-                        onClickSetActiveValue(category, incomeData)
-                      }
-                      className={s.button}
-                    >
-                      <span className={s.price}>{sum.toFixed(2)}</span>
-                      {img}
-                      <span className={s.category}>{category}</span>
-                    </button>
-                  </li>
-                ))}
-            </ul>
-          </div>
-        ) : (
+        <div className={s.wrapList}>
           <ul className={s.list}>
-            {categoriesListExp &&
-              categoriesListExp.map(({ sum, category, img }) => (
+            {categoriesList &&
+              categoriesList.map(({ sum, category, img }) => (
                 <li key={category} className={s.item}>
                   <button
-                    onClick={() => onClickSetActiveValue(category, expenseData)}
+                    onClick={() => onClickSetActiveValue(category, Data)}
                     className={s.button}
                   >
                     <span className={s.price}>{sum.toFixed(2)}</span>
                     {img}
-                    <span className={s.category}>{category}</span>
+                    <p className={s.category}>{category}</p>
                   </button>
                 </li>
               ))}
           </ul>
-        )}
+        </div>
       </div>
       {descriptionList.length > 0 && (
         <div className={s.wrapChart}>

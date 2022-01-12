@@ -76,13 +76,7 @@ export default function Charts({ descriptionList, expense }) {
           'rgb(255, 218, 192)',
           'rgb(255, 218, 192)',
         ],
-        plugins: {
-          datalabels: {
-            display: true,
-            color: 'green',
-          },
-        },
-        // borderColor: colorsArray(sortedSum),
+
         borderWidth: 1,
         borderRadius: 10,
         barThickness: 38,
@@ -111,12 +105,17 @@ export default function Charts({ descriptionList, expense }) {
       },
     },
     responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+    },
   };
   const height = width < 480 ? 400 : 200;
   const options = width < 480 ? optionsHorizontal : optionsVertical;
 
   return (
-    <div className={s.bar}>
+    <div className={s.chartContainer}>
       <Bar data={data} height={height} options={options} />
     </div>
   );

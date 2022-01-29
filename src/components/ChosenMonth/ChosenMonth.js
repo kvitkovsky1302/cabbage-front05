@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment';
 import { ReactComponent as Left } from '../../images/reportsCategories/left-arrow.svg';
 import { ReactComponent as Right } from '../../images/reportsCategories/right-arrow.svg';
+import { transactionsSelectors } from '../../redux/transaction';
 import {
   incrementMonth,
   decrementMonth,
@@ -33,23 +34,23 @@ const ChosenMonth = () => {
     ],
   });
 
+  const currentDate = useSelector(transactionsSelectors.currentDate);
   useEffect(() => {
-    const dateNow = new Date();
-    setVisibleDate(moment(dateNow.toISOString()).format('MMMM YYYY'));
-    setstateDate(dateNow);
-    dispatch(operations.fatchTransactionsPerMonth(dateNow));
+    setVisibleDate(moment(currentDate).format('MMMM YYYY'));
+    setstateDate(currentDate);
+    dispatch(operations.fatchTransactionsPerMonth(currentDate));
   }, [dispatch]);
 
-  const incrementDate = event => {
-    event.preventDefault();
-    const dateNow = new Date();
-    if (Date.parse(dateNow) < Date.parse(stateDate)) {
-      console.log(`месяц еще не настал`);
+  const incrementDate = e => {
+    e.preventDefault();
+    if (moment() < moment(stateDate)) {
+      alert(`месяц еще не настал`);
+      // console.log(`месяц еще не настал`);
       return;
     }
-    const isoDate = stateDate.toISOString();
-    const nextMonth = moment(isoDate).add(1, 'month').format('MMMM YYYY');
-    const nextMonthForObject = moment(isoDate)
+
+    const nextMonth = moment(stateDate).add(1, 'month').format('MMMM YYYY');
+    const nextMonthForObject = moment(stateDate)
       .add(1, 'month')
       .format('YYYY-MM-DD');
     const normalizedMonth = new Date(nextMonthForObject);
@@ -65,9 +66,8 @@ const ChosenMonth = () => {
   const decrementDate = event => {
     event.preventDefault();
 
-    const isoDate = stateDate.toISOString();
-    const nextMonth = moment(isoDate).add(-1, 'month').format('MMMM YYYY');
-    const nextMonthForObject = moment(isoDate)
+    const nextMonth = moment(stateDate).add(-1, 'month').format('MMMM YYYY');
+    const nextMonthForObject = moment(stateDate)
       .add(-1, 'month')
       .format('YYYY-MM-DD');
     const normalizedMonth = new Date(nextMonthForObject);

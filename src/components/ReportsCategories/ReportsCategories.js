@@ -41,10 +41,6 @@ export default function ReportsCategories() {
   }, [toggle]);
 
   useEffect(() => {
-    setDescriptionList(categoriesList);
-  }, [toggle]);
-
-  useEffect(() => {
     function handleKeyDown(e) {
       if (e.code === 'ArrowLeft' || e.code === 'ArrowRight') {
         memoizedOnClickToggle();
@@ -209,6 +205,9 @@ export default function ReportsCategories() {
   }
 
   const categoriesList = match(Data, categories);
+  useEffect(() => {
+    setDescriptionList(categoriesList);
+  }, [Data]);
 
   const data = toggle ? 'ДОХОДЫ' : 'РАСХОДЫ';
 

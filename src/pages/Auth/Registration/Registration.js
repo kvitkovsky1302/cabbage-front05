@@ -71,7 +71,6 @@ const Registration = () => {
   }, []);
 
   const handleSubmit = e => {
-    console.log('submit:', handleSubmit);
     const name = e.name;
     const email = e.email;
     const password = e.password;

@@ -1,0 +1,38 @@
+.link {
+  position: relative;
+  margin-left: auto;
+  display: inline-flex;
+  text-decoration: none;
+  align-items: center;
+  width: 154px;
+}
+
+.link:hover,
+.link:focus {
+  transform: scale(1.02);
+  transition: all 200ms linear;
+}
+
+.btnText {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  margin-right: 20px;
+  color: rgba(86, 86, 88, 0.7);
+  font-weight: 500;
+  padding-top: 6px;
+  padding-left: 3px;
+  transition: all 150ms linear;
+}
+
+.btnText:hover,
+.btnText:focus {
+  color: rgb(155, 157, 165);
+  text-decoration: underline;
+}
+
+.btnIcon {
+  width: 24px;
+  height: 24px;
+}

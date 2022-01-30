@@ -1,0 +1,102 @@
+.auth {
+  position: absolute;
+  /* right: 10px; */
+  top: 199px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 525px;
+  margin: 0px auto;
+  padding: 42px 17px 51px;
+  border-radius: 30px;
+  box-shadow: 5px 10px 20px rgba(170, 178, 197, 0.2);
+}
+
+.textGoogle {
+  margin: auto;
+  text-align: center;
+}
+
+.textAuth {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  width: 242px;
+  height: 24px;
+  font-size: 10px;
+
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  color: #52555f;
+}
+
+.text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.04em;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  color: #000000;
+}
+
+.ErrorMessage {
+  margin-top: 0;
+  padding: 0;
+  color: #eb5757;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.input {
+  font-family: Roboto;
+  margin-bottom: 4px;
+  width: 253px;
+  height: 52px;
+  background: #f5f6fb;
+  color: #000000;
+  border-radius: 30px;
+  padding: 17px 20px;
+  border: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .auth {
+    position: absolute;
+    right: 166px;
+    top: 297px;
+
+    width: 436px;
+    height: 535px;
+    padding: 50px 85px 53px;
+  }
+
+  .textAuth {
+    width: 265px;
+    height: 28px;
+    font-size: 12px;
+    line-height: 1.7;
+    letter-spacing: 0.04em;
+  }
+
+  .text {
+    font-size: 12px;
+    line-height: 1.16;
+  }
+
+  .input {
+    width: 265px;
+    height: 52px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .auth {
+    position: absolute;
+    right: 170px;
+    top: 170px;
+  }
+}

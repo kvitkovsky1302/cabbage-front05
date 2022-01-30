@@ -1,0 +1,53 @@
+.logoHero {
+  display: flex;
+  flex-direction: column;
+  width: 183px;
+  height: 63px;
+  position: absolute;
+  left: 49px;
+  top: 86px;
+}
+
+.heroTitle {
+  width: 183px;
+}
+.heroDscr {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color: #52555f;
+  padding-left: 11px;
+  margin-top: 4px;
+}
+
+@media screen and (min-width: 768px) {
+  .logoHero {
+    width: 306px;
+    height: 101px;
+    left: 171px;
+    top: 90px;
+  }
+
+  .heroDscr {
+    padding-left: 53px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .logoHero {
+    width: 377px;
+    height: 139px;
+    left: 230px;
+    top: 308px;
+  }
+
+  .heroDscr {
+    padding-left: 72px;
+  }
+}

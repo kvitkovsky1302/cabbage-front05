@@ -1,0 +1,132 @@
+/* .inputContainer {
+  display: flex;
+} */
+
+.form {
+  /* display: flex; */
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  width: 282px;
+  letter-spacing: 0.02em;
+}
+
+.categorySelectField {
+  width: 100%;
+}
+
+.btnsContainer {
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .inputContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form {
+    display: flex;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    width: 470px;
+
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 0.02em;
+    margin-top: 0px;
+  }
+
+  .btnsContainer {
+    margin-bottom: 48px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .inputContainer {
+    justify-content: space-between;
+    flex-direction: initial;
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .innerContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .innerContainer {
+    margin: 0;
+  }
+
+  .form {
+    width: 580px;
+  }
+
+  .btnsContainer {
+    margin: 0px;
+  }
+
+  .inputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.datepickerButton {
+  margin-right: 25px;
+
+  font-weight: 900;
+  color: #52555f;
+
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.datepickerButton .wrapper {
+  display: flex;
+  align-items: flex-end;
+}
+
+.calendar {
+  margin-right: 10px;
+}
+
+.button {
+  display: inline-block;
+  height: 44px;
+  width: 125px;
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+
+  text-transform: uppercase;
+  border-radius: 16px;
+  text-align: center;
+  color: #52555f;
+  cursor: pointer;
+
+  background-color: transparent;
+  border: 2px solid #f5f6fb;
+  transition: color 250ms linear, background-color 250ms linear,
+    border-color 250ms linear;
+}
+
+.button:hover {
+  background-color: #ff751d;
+  color: #ffffff;
+  border-color: #ff751d;
+}
+
+.leftButton {
+  margin-right: 15px;
+}

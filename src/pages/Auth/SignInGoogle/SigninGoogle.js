@@ -2,7 +2,8 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { GoogleLogin } from 'react-google-login';
 
-import logInSucces from '../../../redux/auth/auth-slice';
+// import logInSucces from '../../../redux/auth/auth-slice';
+import authOperations from '../../../redux/auth/auth-operations';
 import googleLogo from './svg/logoGoogle.svg';
 
 import b from '../../../components/ButtonAuth/Button.module.css';
@@ -13,13 +14,18 @@ const clientId =
 function SignInGoogle() {
   const dispatch = useDispatch();
 
-  const onSuccess = res => {
-    console.log('Login Success: currentUser:', res.profileObj);
-    alert(
-      ` Авторизация прошла успешно🎉 Добро пожаловать, ${res.profileObj.name} 😍. \n Рады Вас видеть!`,
-    );
-    const { email, name } = res.profileObj;
-    dispatch(logInSucces({ email, name, token: 'qwqw', isGoogleSigned: true }));
+  const onSuccess = async ({ tokenId, profileObj }) => {
+    console.log('Login Success: currentUser:', profileObj);
+    const { email, name } = profileObj;
+    const newUser = {
+      email,
+      name,
+      tokenId,
+    };
+    // alert(
+    //   ` Авторизация прошла успешно🎉 Добро пожаловать, ${name} 😍. \n Рады Вас видеть!`,
+    // );
+    dispatch(authOperations.logInGoogle(newUser));
   };
 
   const onFailure = res => {
@@ -45,7 +51,8 @@ function SignInGoogle() {
       <GoogleLogin
         render={renderProps => (
           <button onClick={renderProps.onClick} style={customStyle}>
-            <img src={googleLogo} alt="Google Logo"  className={b.logo}/>Google 
+            <img src={googleLogo} alt="Google Logo" className={b.logo} />
+            Google
           </button>
         )}
         clientId={clientId}
@@ -53,7 +60,7 @@ function SignInGoogle() {
         onSuccess={onSuccess}
         onFailure={onFailure}
         cookiePolicy={'single_host_origin'}
-        isSignedIn={true}
+        // isSignedIn={true}
       />
     </div>
   );

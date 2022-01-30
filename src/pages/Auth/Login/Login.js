@@ -33,7 +33,7 @@ const Login = () => {
     //валидация для password
     if (!values.password) {
       errors.password = 'это обязательное поле';
-    } else if (values.password.length < 6 || values.password.length > 12) {
+    } else if (values.password.length < 6 || values.password.length > 20) {
       errors.password = 'Логин или пароль не верный';
     }
 

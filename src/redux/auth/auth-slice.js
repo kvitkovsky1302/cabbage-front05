@@ -19,15 +19,27 @@ const authSlice = createSlice({
       }
       state.user = action.payload.user;
     },
+    [authOperations.logInGoogle.fulfilled](state, action) {
+      // if (action.payload === undefined) {
+      //   return;
+      // }
+      state.user.name = action.meta.arg.name;
+      state.user.email = action.meta.arg.email;
+      state.token = action.meta.arg.tokenId;
+      state.isLoggedIn = true;
+      state.isGoogleSigned = true;
+      // state.isGoogleSigned = action.payload.isGoogleSigned;
+    },
     [authOperations.logIn.fulfilled](state, action) {
-      if (action.payload === undefined) {
-        return;
-      }
-      state.user = action.payload.user;
+      // if (action.payload === undefined) {
+      //   return;
+      // }
+      state.user.name = action.meta.arg.name;
+      state.user.email = action.meta.arg.email;
       state.token = action.payload.user.token;
       state.isLoggedIn = true;
-      //state.isGoogleSigned = true;
-      state.isGoogleSigned = action.payload.isGoogleSigned;
+      state.isGoogleSigned = false;
+      // state.isGoogleSigned = action.payload.isGoogleSigned;
     },
 
     [authOperations.logOut.fulfilled](state, action) {

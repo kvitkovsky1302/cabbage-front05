@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import paths from './config';
 //components
 import Container from './components/Container';
-import AppBar from './components/Header/appBar';
+import Logo from './components/Header/Logo';
 import UserMenu from './components/Header/userMenu';
 import PrivateRoute from './components/Route/PrivateRoute';
 import PublicRoute from './components/Route/PublicRoute';
@@ -36,7 +36,7 @@ function App() {
     <>
       <BackgroundMain>
         <header className={styles.headerContainer}>
-          <AppBar></AppBar>
+          <Logo />
           {isLoggedIn ? <UserMenu /> : null}
         </header>
         <Container>

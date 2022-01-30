@@ -23,7 +23,6 @@ const Balance = ({ mobile }) => {
   const location = useLocation();
 
   const balance = useSelector(authSelectors.getBalance);
-
   const setToken = useSelector(authSelectors.getToken);
 
   const dispatch = useDispatch();
@@ -38,7 +37,7 @@ const Balance = ({ mobile }) => {
   useEffect(() => {
     token.set(setToken);
     dispatch(authOperations.getBalance());
-  }, [dispatch]);
+  }, [dispatch, setToken]);
 
   useEffect(() => {
     setSum(balance);
@@ -50,6 +49,7 @@ const Balance = ({ mobile }) => {
     e.preventDefault();
     dispatch(authOperations.setBalance(sum));
   };
+
   return (
     <form
       onSubmit={handleSubmitForm}
@@ -76,11 +76,9 @@ const Balance = ({ mobile }) => {
                 autoComplete="off"
               />
               <button
-                className={
-                  mobile
-                    ? `${s.balanceInputReport} ${s.balanceButton}`
-                    : `${s.balanceButton} `
-                }
+                className={`${s.balanceButton} ${
+                  location.pathname === paths.reports && `${s.visuallyHidden}`
+                }`}
                 type="submit"
               >
                 ПОДТВЕРДИТЬ

@@ -1,9 +1,8 @@
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate, NavLink } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
-import paths from '../../../config';
 import { SignInGoogle } from '../SignInGoogle/SigninGoogle';
 import authOperations from '../../../redux/auth/auth-operations';
 import authSelectors from '../../../redux/auth/auth-selectors';
@@ -21,14 +20,8 @@ const INITIAL_VALUES = {
 
 const Registration = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
-
-  const goToLogin = () => {
-    // navigate(paths.login);
-    window.open(paths.login);
-  };
 
   const validate = useCallback(values => {
     const errors = {};
@@ -76,7 +69,7 @@ const Registration = () => {
     const password = e.password;
 
     dispatch(authOperations.register({ name, email, password }));
-    // window.open('/');
+    window.location.assign('/');
   };
 
   return (
@@ -164,11 +157,7 @@ const Registration = () => {
                   </Link>
                 </div>
                 <div className={s.btnRegister}>
-                  <button
-                    type="submit"
-                    className={b.btnAuth}
-                    onClick={goToLogin}
-                  >
+                  <button type="submit" className={b.btnAuth}>
                     Зарегестрироваться
                   </button>
                 </div>

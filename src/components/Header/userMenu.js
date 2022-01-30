@@ -5,7 +5,7 @@ import Modal from '../Modal/Modal';
 import ModalUniversal from '../ModalUniversal/ModalUniversal';
 import defaultAvatar from './user.png';
 import authSelectors from '../../redux/auth/auth-selectors';
-import styles from '../Header/Header.module.css';
+import s from '../Header/Header.module.css';
 import authOperations from '../../redux/auth/auth-operations';
 
 export default function UserMenu() {
@@ -24,15 +24,15 @@ export default function UserMenu() {
 
   return (
     <>
-      <div className={styles.user}>
+      <div className={s.user}>
         <img
           src={avatar ? avatar : defaultAvatar}
           alt="user avatar"
-          className={styles.userAvatar}
+          className={s.userAvatar}
         />
       </div>
-      <div className={styles.userName}>{name} </div>
-      <button type="button" className={styles.logout} onClick={toggleModal}>
+      <div className={s.userName}>{name} </div>
+      <button type="button" className={s.logout} onClick={toggleModal}>
         {showModal && (
           <Modal
             onClose={toggleModal}
@@ -66,11 +66,7 @@ export default function UserMenu() {
           </defs>
         </svg>
       </button>
-      <button
-        type="button"
-        onClick={toggleModal}
-        className={styles.tabletLogout}
-      >
+      <button type="button" onClick={toggleModal} className={s.tabletLogout}>
         {showModal && (
           <Modal
             onClose={toggleModal}

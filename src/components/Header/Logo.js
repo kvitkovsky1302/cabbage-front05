@@ -1,10 +1,10 @@
-import styles from '../Header/Header.module.css';
+import s from '../Header/Header.module.css';
 
 import React from 'react';
 
-export default function AppBar() {
+export default function Logo() {
   return (
-    <a href="/" className={styles.logo}>
+    <a href="/" className={s.logo}>
       <svg
         width="90"
         height="31"

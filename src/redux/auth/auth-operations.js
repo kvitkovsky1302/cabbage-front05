@@ -32,10 +32,8 @@ const register = createAsyncThunk('/register', async credentials => {
 });
 
 const logInGoogle = createAsyncThunk('auth/google', async credentials => {
-  console.log('credentials', credentials);
   try {
     const { data } = await axios.post('auth/google', credentials);
-    console.log('data', data);
     token.set(data.user.token);
     return data;
   } catch (error) {

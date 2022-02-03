@@ -44,7 +44,7 @@ const Registration = () => {
       errors.password = 'это обязательное поле';
     } else if (values.password.length < 6 || values.password.length > 12) {
       errors.password =
-        'Такой пароль не подходит. Пароль должен быть больше 6 и меньше 12 символов';
+        'Такой пароль не подходит. Пароль должен быть больше 6 ';
     }
 
     //валидация для confirm password
@@ -55,7 +55,7 @@ const Registration = () => {
       values.confirmPassword.length > 12
     ) {
       errors.confirmPassword =
-        'Такой пароль не подходит. Пароль должен быть больше 6 и меньше 12 символов';
+        'Такой пароль не подходит. Пароль должен быть больше 6 ';
     } else if (values.confirmPassword !== values.password) {
       errors.confirmPassword =
         'Пароль не подходит. Подтверждение пароля должно совпадать с паролем';

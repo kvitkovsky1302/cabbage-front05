@@ -7,7 +7,6 @@ import '@pnotify/mobile/dist/PNotifyMobile.css';
 
 axios.defaults.baseURL = 'https://cabbage-back-end.herokuapp.com/api';
 // 'http://localhost:3001/api';
-// 'https://second-serv.herokuapp.com/api';
 
 //на все запроссы авторизации
 const token = {

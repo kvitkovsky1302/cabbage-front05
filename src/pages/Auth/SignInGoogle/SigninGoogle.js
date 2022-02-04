@@ -30,7 +30,7 @@ function SignInGoogle() {
 
   const onFailure = res => {
     console.log('Login failed: res:', res);
-    alert(`Ошибка авторизации. 😢\n Пожалуйста, попробуйте еще раз чуть позже`);
+    // alert(`Ошибка авторизации. 😢\n Пожалуйста, попробуйте еще раз чуть позже`);
   };
 
   const customStyle = {
@@ -60,7 +60,6 @@ function SignInGoogle() {
         onSuccess={onSuccess}
         onFailure={onFailure}
         cookiePolicy={'single_host_origin'}
-        // isSignedIn={true}
       />
     </div>
   );

@@ -91,7 +91,7 @@ export default function TransactionForm({
           todayButton="Сегодня"
           customInput={<CustomInput />}
         />
-        <form className={s.form}>
+        <form className={s.form} onSubmit={handleFormSubmit}>
           <CategoryInput
             value={description}
             onChange={handleChangeProduct}

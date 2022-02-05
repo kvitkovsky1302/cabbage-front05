@@ -1,6 +1,6 @@
 .backgroundPage {
   position: relative;
-  height: 100vh;
+  height: 105em;
   width: 100%;
   /* overflow: hidden; */
 }
@@ -22,8 +22,8 @@
     z-index: -1;
     position: absolute;
     left: 64%;
-    top: 1033px;
-    /* bottom: -39px; */
+    /* top: 1033px; */
+    bottom: -39px;
     height: 142px;
     width: 183px;
     background-image: url(../../../images/background/doubleCole.png);
@@ -37,7 +37,7 @@
   .coles,
   .colesTr {
     left: 10px;
-    bottom: -20px;
+    /* bottom: -20px; */
     top: auto;
     height: 194px;
     width: 100%;

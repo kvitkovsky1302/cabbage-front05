@@ -14,7 +14,7 @@ import {
   transactionsSelectors,
 } from '../../../redux/transaction';
 
-import { summaryOperations, summarySelectors } from '../../../redux/summary';
+import { summaryOperations } from '../../../redux/summary';
 // import axios from 'axios';
 
 const optionsExpense = [
@@ -35,15 +35,6 @@ const optionsIncome = [
   { value: 'salary', label: 'ЗП' },
   { value: 'additional', label: 'Доп. доход' },
 ];
-
-// const token = {
-//   set(token) {
-//     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-//   },
-//   unset() {
-//     axios.defaults.headers.common.Authorization = '';
-//   },
-// };
 
 export default function Tabs() {
   const [expense, setExpense] = useState(true);

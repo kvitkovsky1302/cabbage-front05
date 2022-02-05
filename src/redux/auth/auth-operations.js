@@ -5,8 +5,8 @@ import '@pnotify/core/dist/PNotify.css';
 import * as PNotifyMobile from '@pnotify/mobile';
 import '@pnotify/mobile/dist/PNotifyMobile.css';
 
-axios.defaults.baseURL = 'https://cabbage-back-end.herokuapp.com/api';
-// 'http://localhost:3001/api';
+axios.defaults.baseURL = 'http://localhost:3001/api';
+// 'https://cabbage-back-end.herokuapp.com/api';
 
 //на все запроссы авторизации
 const token = {
@@ -33,6 +33,7 @@ const register = createAsyncThunk('/register', async credentials => {
 const logInGoogle = createAsyncThunk('auth/google', async credentials => {
   try {
     const { data } = await axios.post('auth/google', credentials);
+    console.log('data', data);
     token.set(data.user.token);
     return data;
   } catch (error) {
@@ -79,14 +80,9 @@ const setBalance = createAsyncThunk('auth/setBalance', async balance => {
 
 const getBalance = createAsyncThunk('balance/getBalance', async () => {
   try {
-    // dispatch(balanceActions.setLoading(true));
     const { data } = await axios.get('/auth/users/current');
+    console.log('/auth/users/current data', data);
     return data;
-    // dispatch(balanceActions.getBalance(balance));
-    // dispatch(balanceActions.setLoading(false));
-
-    //  const balance = await balanceServices.getCurrentBalance();
-    // return balance;
   } catch (error) {
     defaultModules.set(PNotifyMobile, {});
     alert({
